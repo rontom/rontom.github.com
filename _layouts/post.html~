@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div id="post">
+{{ content }}
+</div>
+
+<div id="related">
+  <h2>也许你还喜欢阅读以下文章</h2>
+  <ol class="posts">
+  {% for post in site.posts limit:3 %}
+  	<li>
+    	<span class="datetime muted" data-time="{{ post.date }}">{{ post.date | date_to_string }} </span>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+   </ol>
+</div>

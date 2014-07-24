@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Tom Preston-Werner</title>
+ <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
+ <link href="http://tom.preston-werner.com/"/>
+ <updated>2014-07-25T03:31:54+08:00</updated>
+ <id>http://tom.preston-werner.com/</id>
+ <author>
+   <name>Tom Preston-Werner</name>
+   <email>tom@mojombo.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Python Syntaxerror</title>
+   <link href="http://tom.preston-werner.com/2014/07/01/python-SyntaxError.html"/>
+   <updated>2014-07-01T00:00:00+08:00</updated>
+   <id>http://tom.preston-werner.com/2014/07/01/python-SyntaxError</id>
+   <content type="html">&lt;h3 id=&quot;python&quot;&gt;Python代码编写出现的错误&lt;/h3&gt;
+
+&lt;h4 id=&quot;pythonsyntaxerrornonascii_character_xe5&quot;&gt;python默认编码错误SyntaxError:Non-ASCII character ‘\xe5’之解决方法&lt;/h4&gt;
+
+&lt;p&gt;在编写python时，当使用中文输出或注释时运行脚本，会提示错误信息： SyntaxError:Non-SACII character ‘\xe5’ in file&lt;/p&gt;
+
+&lt;p&gt;解决方法：python的默认编码文件用的是ASCII码，你将文件保存为UTF-8，解决方法很简单，在文件开头加入 #-&lt;em&gt;-coding:utf-8-&lt;/em&gt;- 或者是#coding=utf-8&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Python中sys.argv用法</title>
+   <link href="http://tom.preston-werner.com/2014/06/26/python-argv.html"/>
+   <updated>2014-06-26T00:00:00+08:00</updated>
+   <id>http://tom.preston-werner.com/2014/06/26/python-argv</id>
+   <content type="html">&lt;h3 id=&quot;python_sysargv&quot;&gt;python -sys.argv[]用法&lt;/h3&gt;
+
+&lt;h4 id=&quot;&quot;&gt;介绍&lt;/h4&gt;
+
+&lt;p&gt;sys.argv变量是一个字符串（包含了命令行参数）列表，即使用命令行传递给你的程序的参数。也包括python脚本名本身。其中sys为python标准模块，直接import sys插入使用，这是sys.argv[]能够使用的条件。argv是argument vector的简写，即参数指针。sys.argv[0]代表代码本身文件路径。sys.argv[1]代表地一个参数，依此类推。&lt;/p&gt;
+
+&lt;h4 id=&quot;_2&quot;&gt;举例说明&lt;/h4&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='vim'&gt;    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;import sys
+    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;python ×××.&lt;span class='k'&gt;py&lt;/span&gt;  langoft.&lt;span class='k'&gt;com&lt;/span&gt; &lt;span class='k'&gt;for&lt;/span&gt; you &lt;span class='k'&gt;to&lt;/span&gt; choose.  #sys.argv[&lt;span class='m'&gt;0&lt;/span&gt;] 代表你运行的代码本身，即本例中&lt;span class='s1'&gt;&amp;#39;×××.py&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;而sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;]为第一个参数即&lt;span class='s1'&gt;&amp;#39;langoft.com&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;sys.argv[&lt;span class='m'&gt;2&lt;/span&gt;]为&lt;span class='s1'&gt;&amp;#39;for&amp;#39;&lt;/span&gt;。
+    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;import os &lt;span class='p'&gt;,&lt;/span&gt;sys
+    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;os.system&lt;span class='p'&gt;(&lt;/span&gt;sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;]&lt;span class='p'&gt;)&lt;/span&gt;
+    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;python ×××.&lt;span class='k'&gt;py&lt;/span&gt; &lt;span class='k'&gt;vim&lt;/span&gt;  #os.system是用来执行命令行的。因此该程序会接受到第一个参数为&lt;span class='s1'&gt;&amp;#39;vim&amp;#39;&lt;/span&gt;，即执行&lt;span class='k'&gt;vim&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;这样你将打开&lt;span class='k'&gt;vim&lt;/span&gt;编辑界面了。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;_3&quot;&gt;应用实例&lt;/h4&gt;
+&lt;pre&gt;
+
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='vim'&gt;\#&lt;span class='p'&gt;!&lt;/span&gt;&lt;span class='sr'&gt;/usr/&lt;/span&gt;&lt;span class='nb'&gt;bin&lt;/span&gt;/env python
+\# &lt;span class='p'&gt;-&lt;/span&gt;*&lt;span class='p'&gt;-&lt;/span&gt; coding: utf&lt;span class='m'&gt;-8&lt;/span&gt; &lt;span class='p'&gt;-&lt;/span&gt;*&lt;span class='p'&gt;-&lt;/span&gt;
+\# A revised example from A Byte of Python
+\# sys&lt;span class='p'&gt;-&lt;/span&gt;argv1.&lt;span class='k'&gt;py&lt;/span&gt;
+
+import sys
+&lt;span class='nb'&gt;def&lt;/span&gt; readfile&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;filename&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;:         #从文件中读出文件内容
+        &lt;span class='s1'&gt;&amp;#39;&amp;#39;&amp;#39;Print a file to the standard output.&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;   
+        &lt;span class='k'&gt;f&lt;/span&gt;&lt;span class='p'&gt;=&lt;/span&gt;open&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;filename&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;	#可使用&lt;span class='k'&gt;file&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;代替
+        &lt;span class='k'&gt;while&lt;/span&gt; True:
+                line&lt;span class='p'&gt;=&lt;/span&gt;&lt;span class='k'&gt;f&lt;/span&gt;.readline&lt;span class='p'&gt;()&lt;/span&gt; #readline&lt;span class='p'&gt;()&lt;/span&gt;文件内容单行读取，而read&lt;span class='p'&gt;(),&lt;/span&gt;readlines&lt;span class='p'&gt;()&lt;/span&gt;是整个文件内容读取
+                &lt;span class='k'&gt;if&lt;/span&gt; len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)==&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;:
+                        &lt;span class='k'&gt;break&lt;/span&gt;
+                print line     #分别输出每行内容
+&lt;span class='s1'&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39; 上面一段代码可以更改如下：
+	&lt;span class='k'&gt;while&lt;/span&gt; True:
+          		&lt;span class='k'&gt;for&lt;/span&gt; line &lt;span class='k'&gt;in&lt;/span&gt;  &lt;span class='k'&gt;f&lt;/span&gt;.readlines&lt;span class='p'&gt;()&lt;/span&gt;:
+	   		&lt;span class='k'&gt;if&lt;/span&gt; not len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)&lt;/span&gt; or len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)==&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;:	#其实not len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)&lt;/span&gt; 和len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)==&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;表达的意思差不多
+	  			&lt;span class='k'&gt;break&lt;/span&gt;
+	 		print line
+&lt;span class='s1'&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
+        &lt;span class='k'&gt;f&lt;/span&gt;.&lt;span class='k'&gt;close&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+
+\# Script starts from here
+&lt;span class='k'&gt;if&lt;/span&gt; len&lt;span class='p'&gt;(&lt;/span&gt;sys.argv&lt;span class='p'&gt;)&amp;lt;&lt;/span&gt;&lt;span class='m'&gt;2&lt;/span&gt;:
+        print &lt;span class='s1'&gt;&amp;#39;No action specified.&amp;#39;&lt;/span&gt;
+        sys.&lt;span class='k'&gt;exit&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class='k'&gt;if&lt;/span&gt; sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;].startswith&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;--&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;: 
+        &lt;span class='k'&gt;option&lt;/span&gt;&lt;span class='p'&gt;=&lt;/span&gt;sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;][&lt;span class='m'&gt;2&lt;/span&gt;:]
+        &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='k'&gt;option&lt;/span&gt;&lt;span class='p'&gt;==&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;version&amp;#39;&lt;/span&gt;:   #当命令参数为&lt;span class='p'&gt;--&lt;/span&gt;&lt;span class='k'&gt;version&lt;/span&gt;，显示版本号
+                print&lt;span class='s1'&gt;&amp;#39;Version 1.2&amp;#39;&lt;/span&gt;
+        elif &lt;span class='k'&gt;option&lt;/span&gt;&lt;span class='p'&gt;==&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;help&amp;#39;&lt;/span&gt;:    #当命令参数为&lt;span class='p'&gt;--&lt;/span&gt;help时，显示相关帮助内容
+                print&lt;span class='s1'&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
+
+This program prints &lt;span class='k'&gt;files&lt;/span&gt; &lt;span class='k'&gt;files&lt;/span&gt; &lt;span class='k'&gt;to&lt;/span&gt; the standart output.
+Any &lt;span class='k'&gt;number&lt;/span&gt; of &lt;span class='k'&gt;files&lt;/span&gt; can be specified.
+Options &lt;span class='nb'&gt;include&lt;/span&gt;:
+&lt;span class='p'&gt;--&lt;/span&gt;&lt;span class='k'&gt;version&lt;/span&gt;:Prints hte &lt;span class='k'&gt;version&lt;/span&gt; &lt;span class='k'&gt;number&lt;/span&gt;
+&lt;span class='p'&gt;--&lt;/span&gt;help   :Display the hellp&lt;span class='s1'&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
+        &lt;span class='k'&gt;else&lt;/span&gt;:
+                print &lt;span class='s1'&gt;&amp;#39;Unknow option.&amp;#39;&lt;/span&gt;
+        sys.&lt;span class='k'&gt;exit&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class='k'&gt;else&lt;/span&gt;:
+        &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='k'&gt;filename&lt;/span&gt; &lt;span class='k'&gt;in&lt;/span&gt; sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;:]:   #当参数为文件名时，传入readfile，读出其内容。
+                readfile&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;filename&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/pre&gt;</content>
+ </entry>
+ 
+ 
+</feed>
