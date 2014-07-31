@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="http://tom.preston-werner.com/atom.xml" rel="self"/>
  <link href="http://tom.preston-werner.com/"/>
- <updated>2014-07-25T03:31:54+08:00</updated>
+ <updated>2014-07-30T22:30:38+08:00</updated>
  <id>http://tom.preston-werner.com/</id>
  <author>
    <name>Tom Preston-Werner</name>
@@ -13,17 +13,21 @@
 
  
  <entry>
-   <title>Python Syntaxerror</title>
+   <title>Python代码编写出现的错误</title>
    <link href="http://tom.preston-werner.com/2014/07/01/python-SyntaxError.html"/>
    <updated>2014-07-01T00:00:00+08:00</updated>
    <id>http://tom.preston-werner.com/2014/07/01/python-SyntaxError</id>
    <content type="html">&lt;h3 id=&quot;python&quot;&gt;Python代码编写出现的错误&lt;/h3&gt;
+&lt;hr /&gt;
 
-&lt;h4 id=&quot;pythonsyntaxerrornonascii_character_xe5&quot;&gt;python默认编码错误SyntaxError:Non-ASCII character ‘\xe5’之解决方法&lt;/h4&gt;
+&lt;h4 id=&quot;pythonsyntaxerrornon-ascii-character-xe5&quot;&gt;python默认编码错误SyntaxError:Non-ASCII character ‘\xe5’之解决方法&lt;/h4&gt;
 
-&lt;p&gt;在编写python时，当使用中文输出或注释时运行脚本，会提示错误信息： SyntaxError:Non-SACII character ‘\xe5’ in file&lt;/p&gt;
+&lt;p&gt;在编写python时，当使用中文输出或注释时运行脚本，会提示错误信息：	
+SyntaxError:Non-SACII character ‘\xe5’ in file……&lt;/p&gt;
 
-&lt;p&gt;解决方法：python的默认编码文件用的是ASCII码，你将文件保存为UTF-8，解决方法很简单，在文件开头加入 #-&lt;em&gt;-coding:utf-8-&lt;/em&gt;- 或者是#coding=utf-8&lt;/p&gt;</content>
+&lt;p&gt;解决方法：python的默认编码文件用的是ASCII码，你将文件保存为UTF-8，解决方法很简单，在文件开头加入
+#-&lt;em&gt;-coding:utf-8-&lt;/em&gt;- 或者是#coding=utf-8&lt;/p&gt;
+</content>
  </entry>
  
  <entry>
@@ -31,70 +35,170 @@
    <link href="http://tom.preston-werner.com/2014/06/26/python-argv.html"/>
    <updated>2014-06-26T00:00:00+08:00</updated>
    <id>http://tom.preston-werner.com/2014/06/26/python-argv</id>
-   <content type="html">&lt;h3 id=&quot;python_sysargv&quot;&gt;python -sys.argv[]用法&lt;/h3&gt;
+   <content type="html">&lt;h3 id=&quot;python--sysargv&quot;&gt;python -sys.argv[]用法&lt;/h3&gt;
+&lt;hr /&gt;
 
-&lt;h4 id=&quot;&quot;&gt;介绍&lt;/h4&gt;
+&lt;h4 id=&quot;section&quot;&gt;介绍&lt;/h4&gt;
 
 &lt;p&gt;sys.argv变量是一个字符串（包含了命令行参数）列表，即使用命令行传递给你的程序的参数。也包括python脚本名本身。其中sys为python标准模块，直接import sys插入使用，这是sys.argv[]能够使用的条件。argv是argument vector的简写，即参数指针。sys.argv[0]代表代码本身文件路径。sys.argv[1]代表地一个参数，依此类推。&lt;/p&gt;
 
-&lt;h4 id=&quot;_2&quot;&gt;举例说明&lt;/h4&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='vim'&gt;    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;import sys
-    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;python ×××.&lt;span class='k'&gt;py&lt;/span&gt;  langoft.&lt;span class='k'&gt;com&lt;/span&gt; &lt;span class='k'&gt;for&lt;/span&gt; you &lt;span class='k'&gt;to&lt;/span&gt; choose.  #sys.argv[&lt;span class='m'&gt;0&lt;/span&gt;] 代表你运行的代码本身，即本例中&lt;span class='s1'&gt;&amp;#39;×××.py&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;而sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;]为第一个参数即&lt;span class='s1'&gt;&amp;#39;langoft.com&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;sys.argv[&lt;span class='m'&gt;2&lt;/span&gt;]为&lt;span class='s1'&gt;&amp;#39;for&amp;#39;&lt;/span&gt;。
-    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;import os &lt;span class='p'&gt;,&lt;/span&gt;sys
-    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;os.system&lt;span class='p'&gt;(&lt;/span&gt;sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;]&lt;span class='p'&gt;)&lt;/span&gt;
-    &lt;span class='p'&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;python ×××.&lt;span class='k'&gt;py&lt;/span&gt; &lt;span class='k'&gt;vim&lt;/span&gt;  #os.system是用来执行命令行的。因此该程序会接受到第一个参数为&lt;span class='s1'&gt;&amp;#39;vim&amp;#39;&lt;/span&gt;，即执行&lt;span class='k'&gt;vim&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;这样你将打开&lt;span class='k'&gt;vim&lt;/span&gt;编辑界面了。
+&lt;h4 id=&quot;section-1&quot;&gt;举例说明&lt;/h4&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;    &lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;import sys
+    &lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;python ×××.&lt;span class=&quot;k&quot;&gt;py&lt;/span&gt;  langoft.&lt;span class=&quot;k&quot;&gt;com&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; you &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; choose.  #sys.argv[&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;] 代表你运行的代码本身，即本例中&lt;span class=&quot;s1&quot;&gt;&amp;#39;×××.py&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;而sys.argv[&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;]为第一个参数即&lt;span class=&quot;s1&quot;&gt;&amp;#39;langoft.com&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;sys.argv[&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;]为&lt;span class=&quot;s1&quot;&gt;&amp;#39;for&amp;#39;&lt;/span&gt;。
+    &lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;import os &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;sys
+    &lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;os.system&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;sys.argv[&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;]&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;python ×××.&lt;span class=&quot;k&quot;&gt;py&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;  #os.system是用来执行命令行的。因此该程序会接受到第一个参数为&lt;span class=&quot;s1&quot;&gt;&amp;#39;vim&amp;#39;&lt;/span&gt;，即执行&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;这样你将打开&lt;span class=&quot;k&quot;&gt;vim&lt;/span&gt;编辑界面了。
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id=&quot;_3&quot;&gt;应用实例&lt;/h4&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;应用实例&lt;/h4&gt;
 &lt;pre&gt;
 
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='vim'&gt;\#&lt;span class='p'&gt;!&lt;/span&gt;&lt;span class='sr'&gt;/usr/&lt;/span&gt;&lt;span class='nb'&gt;bin&lt;/span&gt;/env python
-\# &lt;span class='p'&gt;-&lt;/span&gt;*&lt;span class='p'&gt;-&lt;/span&gt; coding: utf&lt;span class='m'&gt;-8&lt;/span&gt; &lt;span class='p'&gt;-&lt;/span&gt;*&lt;span class='p'&gt;-&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;\#&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/usr/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;bin&lt;/span&gt;/env python
+\# &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;*&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; coding: utf&lt;span class=&quot;m&quot;&gt;-8&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;*&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;
 \# A revised example from A Byte of Python
-\# sys&lt;span class='p'&gt;-&lt;/span&gt;argv1.&lt;span class='k'&gt;py&lt;/span&gt;
+\# sys&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;argv1.&lt;span class=&quot;k&quot;&gt;py&lt;/span&gt;
 
 import sys
-&lt;span class='nb'&gt;def&lt;/span&gt; readfile&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;filename&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;:         #从文件中读出文件内容
-        &lt;span class='s1'&gt;&amp;#39;&amp;#39;&amp;#39;Print a file to the standard output.&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;   
-        &lt;span class='k'&gt;f&lt;/span&gt;&lt;span class='p'&gt;=&lt;/span&gt;open&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;filename&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;	#可使用&lt;span class='k'&gt;file&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;代替
-        &lt;span class='k'&gt;while&lt;/span&gt; True:
-                line&lt;span class='p'&gt;=&lt;/span&gt;&lt;span class='k'&gt;f&lt;/span&gt;.readline&lt;span class='p'&gt;()&lt;/span&gt; #readline&lt;span class='p'&gt;()&lt;/span&gt;文件内容单行读取，而read&lt;span class='p'&gt;(),&lt;/span&gt;readlines&lt;span class='p'&gt;()&lt;/span&gt;是整个文件内容读取
-                &lt;span class='k'&gt;if&lt;/span&gt; len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)==&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;:
-                        &lt;span class='k'&gt;break&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;def&lt;/span&gt; readfile&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;:         #从文件中读出文件内容
+        &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&amp;#39;Print a file to the standard output.&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;   
+        &lt;span class=&quot;k&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;open&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	#可使用&lt;span class=&quot;k&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;代替
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; True:
+                line&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;f&lt;/span&gt;.readline&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; #readline&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;文件内容单行读取，而read&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt;readlines&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;是整个文件内容读取
+                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; len&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;line&lt;span class=&quot;p&quot;&gt;)==&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;:
+                        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
                 print line     #分别输出每行内容
-&lt;span class='s1'&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39; 上面一段代码可以更改如下：
-	&lt;span class='k'&gt;while&lt;/span&gt; True:
-          		&lt;span class='k'&gt;for&lt;/span&gt; line &lt;span class='k'&gt;in&lt;/span&gt;  &lt;span class='k'&gt;f&lt;/span&gt;.readlines&lt;span class='p'&gt;()&lt;/span&gt;:
-	   		&lt;span class='k'&gt;if&lt;/span&gt; not len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)&lt;/span&gt; or len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)==&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;:	#其实not len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)&lt;/span&gt; 和len&lt;span class='p'&gt;(&lt;/span&gt;line&lt;span class='p'&gt;)==&lt;/span&gt;&lt;span class='m'&gt;0&lt;/span&gt;表达的意思差不多
-	  			&lt;span class='k'&gt;break&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39; 上面一段代码可以更改如下：
+	&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; True:
+          		&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; line &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;f&lt;/span&gt;.readlines&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;:
+	   		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; not len&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;line&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; or len&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;line&lt;span class=&quot;p&quot;&gt;)==&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;:	#其实not len&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;line&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 和len&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;line&lt;span class=&quot;p&quot;&gt;)==&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;表达的意思差不多
+	  			&lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
 	 		print line
-&lt;span class='s1'&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
-        &lt;span class='k'&gt;f&lt;/span&gt;.&lt;span class='k'&gt;close&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
+        &lt;span class=&quot;k&quot;&gt;f&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 
 \# Script starts from here
-&lt;span class='k'&gt;if&lt;/span&gt; len&lt;span class='p'&gt;(&lt;/span&gt;sys.argv&lt;span class='p'&gt;)&amp;lt;&lt;/span&gt;&lt;span class='m'&gt;2&lt;/span&gt;:
-        print &lt;span class='s1'&gt;&amp;#39;No action specified.&amp;#39;&lt;/span&gt;
-        sys.&lt;span class='k'&gt;exit&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
-&lt;span class='k'&gt;if&lt;/span&gt; sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;].startswith&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;--&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;: 
-        &lt;span class='k'&gt;option&lt;/span&gt;&lt;span class='p'&gt;=&lt;/span&gt;sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;][&lt;span class='m'&gt;2&lt;/span&gt;:]
-        &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='k'&gt;option&lt;/span&gt;&lt;span class='p'&gt;==&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;version&amp;#39;&lt;/span&gt;:   #当命令参数为&lt;span class='p'&gt;--&lt;/span&gt;&lt;span class='k'&gt;version&lt;/span&gt;，显示版本号
-                print&lt;span class='s1'&gt;&amp;#39;Version 1.2&amp;#39;&lt;/span&gt;
-        elif &lt;span class='k'&gt;option&lt;/span&gt;&lt;span class='p'&gt;==&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;help&amp;#39;&lt;/span&gt;:    #当命令参数为&lt;span class='p'&gt;--&lt;/span&gt;help时，显示相关帮助内容
-                print&lt;span class='s1'&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; len&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;sys.argv&lt;span class=&quot;p&quot;&gt;)&amp;lt;&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;:
+        print &lt;span class=&quot;s1&quot;&gt;&amp;#39;No action specified.&amp;#39;&lt;/span&gt;
+        sys.&lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; sys.argv[&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;].startswith&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;--&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;: 
+        &lt;span class=&quot;k&quot;&gt;option&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;sys.argv[&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;][&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;:]
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;option&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;version&amp;#39;&lt;/span&gt;:   #当命令参数为&lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;version&lt;/span&gt;，显示版本号
+                print&lt;span class=&quot;s1&quot;&gt;&amp;#39;Version 1.2&amp;#39;&lt;/span&gt;
+        elif &lt;span class=&quot;k&quot;&gt;option&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;help&amp;#39;&lt;/span&gt;:    #当命令参数为&lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;help时，显示相关帮助内容
+                print&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
 
-This program prints &lt;span class='k'&gt;files&lt;/span&gt; &lt;span class='k'&gt;files&lt;/span&gt; &lt;span class='k'&gt;to&lt;/span&gt; the standart output.
-Any &lt;span class='k'&gt;number&lt;/span&gt; of &lt;span class='k'&gt;files&lt;/span&gt; can be specified.
-Options &lt;span class='nb'&gt;include&lt;/span&gt;:
-&lt;span class='p'&gt;--&lt;/span&gt;&lt;span class='k'&gt;version&lt;/span&gt;:Prints hte &lt;span class='k'&gt;version&lt;/span&gt; &lt;span class='k'&gt;number&lt;/span&gt;
-&lt;span class='p'&gt;--&lt;/span&gt;help   :Display the hellp&lt;span class='s1'&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
-        &lt;span class='k'&gt;else&lt;/span&gt;:
-                print &lt;span class='s1'&gt;&amp;#39;Unknow option.&amp;#39;&lt;/span&gt;
-        sys.&lt;span class='k'&gt;exit&lt;/span&gt;&lt;span class='p'&gt;()&lt;/span&gt;
-&lt;span class='k'&gt;else&lt;/span&gt;:
-        &lt;span class='k'&gt;for&lt;/span&gt; &lt;span class='k'&gt;filename&lt;/span&gt; &lt;span class='k'&gt;in&lt;/span&gt; sys.argv[&lt;span class='m'&gt;1&lt;/span&gt;:]:   #当参数为文件名时，传入readfile，读出其内容。
-                readfile&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='k'&gt;filename&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+This program prints &lt;span class=&quot;k&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;files&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;to&lt;/span&gt; the standart output.
+Any &lt;span class=&quot;k&quot;&gt;number&lt;/span&gt; of &lt;span class=&quot;k&quot;&gt;files&lt;/span&gt; can be specified.
+Options &lt;span class=&quot;nb&quot;&gt;include&lt;/span&gt;:
+&lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;version&lt;/span&gt;:Prints hte &lt;span class=&quot;k&quot;&gt;version&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;--&lt;/span&gt;help   :Display the hellp&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&amp;#39;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;:
+                print &lt;span class=&quot;s1&quot;&gt;&amp;#39;Unknow option.&amp;#39;&lt;/span&gt;
+        sys.&lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;:
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;filename&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; sys.argv[&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;:]:   #当参数为文件名时，传入readfile，读出其内容。
+                readfile&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;/pre&gt;</content>
+&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>在Python中列表、元组、集合、字典的比较</title>
+   <link href="http://tom.preston-werner.com/2013/07/25/list-element-set-dict.html"/>
+   <updated>2013-07-25T00:00:00+08:00</updated>
+   <id>http://tom.preston-werner.com/2013/07/25/list-element-set-dict</id>
+   <content type="html">&lt;h3 id=&quot;python&quot;&gt;在Python中列表、元组、集合、字典的比较&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;列表&lt;/h4&gt;
+
+&lt;p&gt;列表是任意对象的序列。把值放在方括号中就可以创建列表。从该定义可以看出在列表方括号可以是数值、字符集、函数、元组、集合、字典以及列表等。如下所示：   &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;nums&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;[&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;6&lt;/span&gt;]    
+names&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;[&lt;span class=&quot;s1&quot;&gt;&amp;#39;Rontom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Sarbi&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Wharti&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Kawoyi&amp;#39;&lt;/span&gt;]   
+objs&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;[&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;rontom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10&lt;/span&gt;.&lt;span class=&quot;m&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;www.langoft.com&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;whatis&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;yourname&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;yourphone&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;既然最为序列，那必须可以进行索引。列表使用是从0开始的整数索引，同时可以使用索引运算符访问及修改列表中的选项。如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; names[&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;]	#names来自上述中的列表.&lt;span class=&quot;k&quot;&gt;n&lt;/span&gt;的返回值为‘Wharti’
+names[&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;]&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Hacker&amp;#39;&lt;/span&gt;	#此时将该names中的第一项，即列表names&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;[&lt;span class=&quot;s1&quot;&gt;&amp;#39;Hacker&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Sarbi&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Wharti&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Kawoyi&amp;#39;&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;列表具有追加、插入、替换、删除元素等功能，同时具有提取和连接列表的功能,此外还具有构建功能（列表包含）。 &lt;br /&gt;
+创建一个空列表有两中方式：   &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;   
+names&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;[]
+names&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;元组&lt;/h4&gt;
+
+&lt;p&gt;元组是一组值通过圆括号(即使没有，Python也是可识别出的)打包在一个的对象中的数据结构。例如：   &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;   
+  hacker&lt;span class=&quot;p&quot;&gt;=(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Stivem&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Rontom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;rontom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   
+  website&lt;span class=&quot;p&quot;&gt;=(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;www.chinadream.me&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;www.hacklang.me&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;对于0个和1个的元素的元组，语法有点特殊:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;hacker &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;   
+hacker_age &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;58&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;集合&lt;/h4&gt;
+
+&lt;p&gt;集合是一组无序不能重复元素组成的对象。由于集合是无序的，无法通过数字进行索引。可使用set()函数创建一个集合。例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; test&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;ttttttttttttest&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; test
+{&lt;span class=&quot;s1&quot;&gt;&amp;#39;s&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;t&amp;#39;&lt;/span&gt;}
+&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;集合跟数学所说的集合差不多。支持一系列的标准操作。包括并集、交集、差集和对称差集，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; act&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;aaaaaaaaaaaaaact&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; act &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; test
+{&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;t&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;s&amp;#39;&lt;/span&gt;}
+&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; act &amp;amp; test
+{&lt;span class=&quot;s1&quot;&gt;&amp;#39;t&amp;#39;&lt;/span&gt;}
+&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; act &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; test
+{&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;}
+&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; act ^ test
+{&lt;span class=&quot;s1&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;c&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;s&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;e&amp;#39;&lt;/span&gt;}
+&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;集合也可以进行增项(&lt;strong&gt;add()&lt;/strong&gt;、&lt;strong&gt;update()&lt;/strong&gt;）、删项（&lt;strong&gt;remove()&lt;/strong&gt;）操作。&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Python和Mercurial环境的搭建</title>
+   <link href="http://tom.preston-werner.com/2013/05/23/python-env.html"/>
+   <updated>2013-05-23T00:00:00+08:00</updated>
+   <id>http://tom.preston-werner.com/2013/05/23/python-env</id>
+   <content type="html">&lt;h3 id=&quot;python&quot;&gt;Python环境的搭建&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;说明&lt;/h4&gt;
+&lt;p&gt;本文所涉及需要安装的软件或工具是在kali（基于debian）系统下进行的。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;软件包的安装&lt;/h4&gt;
+&lt;p&gt;kali系统是可以使用apt-get或aptitude命令进行安装的，至于apt-get与aptitude有什么不同，你可以百度谷歌一下，对你有好处。这里采用aptitude安装。 &lt;br /&gt;
+有如下安装包需要安装：    &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;vim&quot;&gt;    $ sudo aptitude &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;update&lt;/span&gt;
+    $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</content>
  </entry>
  
  

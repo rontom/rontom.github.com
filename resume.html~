@@ -17,9 +17,10 @@
         <p></p>
         <h1><a href="/">凉葱落</a></h1>
         <p>学无止境,静水流深.<br/>Web编程爱好者</p>	
-		<p><a href="/about.html">关于我</a></p>
+		<p><a href="/about.html">关于我</a><br/><a href="/resume.html" style="color:#888;">简历</a></p>
       </div>
    <div class="content">
+		<h3><pre>								</pre><a href="resume/index.html">丰富版</a></h3>
         <h3>关于我</h3>
 
 		<p>我，一个人，生活在生活中的一个人。</p>

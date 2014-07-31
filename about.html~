@@ -3,7 +3,7 @@
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <title>about me</title>
-   <meta name="author" content="believe in myself" />
+   <meta name="author" content="heihei,believe in myself" />
    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 <!--[if lt IE 9]>
@@ -16,8 +16,8 @@
       	 <p><img src="/images/logo.png"/></p>
         <p></p>
         <h1><a href="/">凉葱落</a></h1>
-        <p>学无止境,静水流深.</p>
-		<p><a href="/about.html">关于我</a></p>
+        <p>学无止境,静水流深.<br/>Web编程爱好者</p>	
+		<p><a href="/about.html">关于我</a><br/><a href="/resume.html">简历</a></p>
       </div>
    <div class="content">
         <h3>关于我</h3>
@@ -35,13 +35,7 @@
   <div class="footer">
  <div class="contact">
       <p>
-       凉葱落<br />
-       web编程爱好者<br />
-        rontomai@gmail.com
-      </p>
-    </div>
-    <div class="contact">
-      <p>
+		 <a href="mailto:rontomai@gmail.com">rontomai@gmail.com</a><br/>
         <a href="http://github.com/rontom/">github.com/rontom</a><br />
         <a href="http://twitter.com/rontomai/">twitter.com/rontomai</a><br />
       </p>
