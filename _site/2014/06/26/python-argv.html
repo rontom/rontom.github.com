@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html>
 <head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <meta charset="utf-8"/>
-   <title>凉葱落</title>
-   <meta name="author" content="believe in myself" />
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-<!--[if lt IE 9]>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>凉葱落</title>
+  <meta name="author" content="凉葱落" />
+  <link rel="stylesheet" href="/css/pygment.css" type="text/css" />
+  <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+  <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <![endif]-->
 </head>
+
 <body>
-<div class="wrapper">
-      <div class="header">
-      	 <p><img src="/images/logo.png"/></p>
-        <p></p>
-        <h1><a href="/">凉葱落</a></h1>
-        <p>学无止境,静水流深.<br/>Web编程爱好者</p>
-	 <p><a href="/about.html">关于我</a></p>
-      </div>
-  <div class="content">
-  <div id="post">
-<h3 id="python--sysargv">python -sys.argv[]用法</h3>
+  <div class="wrapper">
+    <div class="header">
+      <p><img src="/images/logo.png"/></p>
+      <p></p>
+      <h1><a href="/">凉葱落</a></h1>
+      <p>学无止境,静水流深.</p>
+      <p><a href="/about.html">关于我</a></p>
+
+      <p>
+        <a href="mailto:rontomai@gmail.com">rontomai@gmail.com</a><br/>
+        <a href="http://github.com/rontom/">github.com/rontom</a><br />
+        <a href="http://twitter.com/rontomai/">twitter.com/rontomai</a><br />
+
+      </p>
+    </div>
+    
+    <div class="content">
+    <header class="post-header">
+  <h1 class="post-title"><a href="/2014/06/26/python-argv.html">Python中sys.argv用法</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+   写作时间：2014年06月26日
+  </p>
+</header>
+
+<div id="post">
 <hr />
 
 <h4 id="section">介绍</h4>
@@ -31,17 +46,16 @@
 
 <h4 id="section-1">举例说明</h4>
 
-<div class="highlight"><pre><code class="vim">    <span class="p">&gt;&gt;&gt;</span>import sys
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="p">&gt;&gt;&gt;</span>import sys
     <span class="p">&gt;&gt;&gt;</span>python ×××.<span class="k">py</span>  langoft.<span class="k">com</span> <span class="k">for</span> you <span class="k">to</span> choose.  #sys.argv[<span class="m">0</span>] 代表你运行的代码本身，即本例中<span class="s1">&#39;×××.py&#39;</span><span class="p">,</span>而sys.argv[<span class="m">1</span>]为第一个参数即<span class="s1">&#39;langoft.com&#39;</span><span class="p">,</span>sys.argv[<span class="m">2</span>]为<span class="s1">&#39;for&#39;</span>。
     <span class="p">&gt;&gt;&gt;</span>import os <span class="p">,</span>sys
     <span class="p">&gt;&gt;&gt;</span>os.system<span class="p">(</span>sys.argv[<span class="m">1</span>]<span class="p">)</span>
-    <span class="p">&gt;&gt;&gt;</span>python ×××.<span class="k">py</span> <span class="k">vim</span>  #os.system是用来执行命令行的。因此该程序会接受到第一个参数为<span class="s1">&#39;vim&#39;</span>，即执行<span class="k">vim</span><span class="p">,</span>这样你将打开<span class="k">vim</span>编辑界面了。
-</code></pre></div>
+    <span class="p">&gt;&gt;&gt;</span>python ×××.<span class="k">py</span> <span class="k">vim</span>  #os.system是用来执行命令行的。因此该程序会接受到第一个参数为<span class="s1">&#39;vim&#39;</span>，即执行<span class="k">vim</span><span class="p">,</span>这样你将打开<span class="k">vim</span>编辑界面了。</code></pre></div>
 
 <h4 id="section-2">应用实例</h4>
 <pre>
 
-<div class="highlight"><pre><code class="vim">\#<span class="p">!</span><span class="sr">/usr/</span><span class="nb">bin</span>/env python
+<div class="highlight"><pre><code class="language-vim" data-lang="vim">\#<span class="p">!</span><span class="sr">/usr/</span><span class="nb">bin</span>/env python
 \# <span class="p">-</span>*<span class="p">-</span> coding: utf<span class="m">-8</span> <span class="p">-</span>*<span class="p">-</span>
 \# A revised example from A Byte of Python
 \# sys<span class="p">-</span>argv1.<span class="k">py</span>
@@ -85,75 +99,95 @@ Options <span class="nb">include</span>:
         sys.<span class="k">exit</span><span class="p">()</span>
 <span class="k">else</span>:
         <span class="k">for</span> <span class="k">filename</span> <span class="k">in</span> sys.argv[<span class="m">1</span>:]:   #当参数为文件名时，传入readfile，读出其内容。
-                readfile<span class="p">(</span><span class="k">filename</span><span class="p">)</span>
-</code></pre></div>
+                readfile<span class="p">(</span><span class="k">filename</span><span class="p">)</span></code></pre></div>
 
 </pre>
 
 </div>
 
 <hr/>
+
+<div class="pagination">
+
+	<a class="pagination-item newer" href="/2013/07/25/list-element-set-dict.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--在Python中列表、元组、集合、字典的比较--></a>
+
+
+	<a class="pagination-item older" href="/2014/07/01/python-SyntaxError.html"><!--Python代码编写出现的错误-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+
+</div>
+
+<div class="ds-thread">
+</div>
+
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hacklang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';
+		ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
 <div id="related">
-  <h2>也许你还喜欢阅读以下文章</h2>
-  <ol class="posts">
-  
-  	<li>
-    	<span class="datetime muted" data-time="2014-07-01 00:00:00 +0800">01 Jul 2014 </span>
-    <a href="/2014/07/01/python-SyntaxError.html">Python代码编写出现的错误</a>
-  </li>
-  
-  	<li>
-    	<span class="datetime muted" data-time="2014-06-26 00:00:00 +0800">26 Jun 2014 </span>
-    <a href="/2014/06/26/python-argv.html">Python中sys.argv用法</a>
-  </li>
-  
-  	<li>
-    	<span class="datetime muted" data-time="2013-07-25 00:00:00 +0800">25 Jul 2013 </span>
-    <a href="/2013/07/25/list-element-set-dict.html">在Python中列表、元组、集合、字典的比较</a>
-  </li>
-  
+ 	<h2>最新文章：</h2>
+ 	<hr/>
+ 	<ol class="posts">
+	
+  		<li>
+    		<span class="datetime muted" data-time="2014-07-01 00:00:00 +0800">01 Jul 2014 </span>
+    		<a href="/2014/07/01/python-SyntaxError.html">Python代码编写出现的错误</a>
+  		</li>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2014-06-26 00:00:00 +0800">26 Jun 2014 </span>
+    		<a href="/2014/06/26/python-argv.html">Python中sys.argv用法</a>
+  		</li>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2013-07-25 00:00:00 +0800">25 Jul 2013 </span>
+    		<a href="/2013/07/25/list-element-set-dict.html">在Python中列表、元组、集合、字典的比较</a>
+  		</li>
+  	
    </ol>
 </div>
-  </div>
-  <div class="footer">
-    <div class="contact">
-      <p>
-		<a href="mailto:rontomai@gmail.com">rontomai@gmail.com</a><br/>
-        <a href="http://github.com/rontom/">github.com/rontom</a><br />
-        <a href="http://twitter.com/rontomai/">twitter.com/rontomai</a><br />
-      </p>
     </div>
-    <div class="rss">
-	     <img src="/images/weixin.png" alt="scan me for you">
-      <!--a href="http://feeds.feedburner.com/rontom">
-        <img src="/images/rss1.png" alt="Subscribe to RSS Feed" />
-      </a-->
+    
 
+    <div class="footer">   
+      <div class="rss">
+  	   <img src="/images/weixin.png" alt="scan me for you">
+      </div>
     </div>
+  
   </div>
-</div>
 
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
+  <!-- ClickTale Bottom part -->
+  <!--div id="ClickTaleDiv" style="display: none;"></div-->
+  <!--script type="text/javascript">
+  if(document.location.protocol!='https:')
+    document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+  </script-->
+  <!-- ClickTale end of Bottom part -->
 
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
+  <!-- Google Analytics -->
+  <!--script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-6016902-1");
+  pageTracker._trackPageview();
+  </script-->
+  <!-- Google Analytics end -->
 
 </body>
 </html>

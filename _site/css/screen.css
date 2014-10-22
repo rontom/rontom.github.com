@@ -9,9 +9,10 @@
 
 body {
 	padding:100px;
-	font:14px/1.5 sans-serif,Arial;
+	font:14px/1.5 "Microsoft Yahei",sans-serif,Arial;
 	font-weight:300;
-	color:#999;
+  background-color: #f1f1f1;
+	color:#555;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,11 +29,11 @@ h1 {
 }
 
 h2 {
-	color:#393939;
+	color:#30accd;
 }
 
 h3, h4, h5, h6 {
-	color:#494949;
+	color:#30accd;
 }
 
 p, ul, ol, table, pre, dl {
@@ -42,7 +43,7 @@ p, ul, ol, table, pre, dl {
 a {
 	font-weight:400;
 	text-decoration:none;
-	color:#39c;
+	color:#30accd;
 }
 
 a:hover{
@@ -120,6 +121,7 @@ hr {
 #home span{
 	text-align:center;
 	font-size:12px;
+  color:#999;
 }
 .wrapper {
 	width:860px;
@@ -220,3 +222,70 @@ ol.posts .datetime{
     margin-bottom: 1em;
     color:#999;
   }
+
+/*****************************************************************************/
+/*
+/* Comments
+/*
+/*****************************************************************************/
+
+
+#ds-reset .ds-avatar img {
+  width: 54px !important;
+  height: 54px !important;
+  -webkit-border-radius: 27px !important;
+  -moz-border-radius: 27px !important;
+  border-radius: 27px !important;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  -moz-transition: -moz-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+}
+#ds-reset .ds-avatar img:hover {
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+}
+
+#ds-reset .ds-powered-by {
+  display: none;
+}
+
+/*
+#ds-thread {
+  clear: none !important;
+  float: left;
+  margin-top: 0;
+  width: 100%;
+}
+*/
+
+.pagination{
+  color:#ccc;
+  text-align:center;
+}
+.pagination-item{
+  background:#fff;
+  padding:8px 50px;
+  border:1px solid #ddd;
+  border-radius:5px;
+}
+span.pagination-item{
+  cursor:not-allowed;
+}
+a.pagination-item{
+  transition:background 0.25s;
+  -o-transition:background 0.25s;
+  -webkit-transition:background 0.25s;
+  -moz-transition:background 0.25s;
+}
+a.pagination-item:hover{
+  color:white;
+  background:#30accd;
+  border:1px solid #30accd;
+}
+.pagination-item:first-child{
+  float:left;
+}
+.pagination-item:last-child{
+  float:right;
+}

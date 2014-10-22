@@ -30,25 +30,23 @@
     
     <div class="content">
     <header class="post-header">
-  <h1 class="post-title"><a href="/2013/05/23/python-env.html">Python和Mercurial环境的搭建</a></h2>
+  <h1 class="post-title"><a href="/2013/05/09/network-crackr%20.html">Python代码编写出现的错误</a></h2>
   <p class="post-meta">
     <i class="fa fa-calendar"></i>
-   写作时间：2013年05月23日
+   写作时间：2013年05月09日
   </p>
 </header>
 
 <div id="post">
 <hr />
 
-<h4 id="section">说明</h4>
-<p>本文所涉及需要安装的软件或工具是在kali（基于debian）系统下进行的。</p>
+<h4 id="pythonsyntaxerrornon-ascii-character-xe5">python默认编码错误SyntaxError:Non-ASCII character ‘\xe5’之解决方法</h4>
 
-<h4 id="section-1">软件包的安装</h4>
-<p>kali系统是可以使用apt-get或aptitude命令进行安装的，至于apt-get与aptitude有什么不同，你可以百度谷歌一下，对你有好处。这里采用aptitude安装。 <br />
-有如下安装包需要安装：    </p>
+<p>在编写python时，当使用中文输出或注释时运行脚本，会提示错误信息：	
+SyntaxError:Non-SACII character ‘\xe5’ in file……</p>
 
-<div class="highlight"><pre><code class="language-vim" data-lang="vim">$ sudo aptitude <span class="p">-</span><span class="k">y</span> <span class="k">update</span>
-    $</code></pre></div>
+<p>解决方法：python的默认编码文件用的是ASCII码，你将文件保存为UTF-8，解决方法很简单，在文件开头加入
+#-<em>-coding:utf-8-</em>- 或者是#coding=utf-8</p>
 
 </div>
 
@@ -56,10 +54,10 @@
 
 <div class="pagination">
 
-	<a class="pagination-item newer" href="/2013/05/11/network-crackr%20.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--在Python中列表、元组、集合、字典的比较--></a>
+	<a class="pagination-item newer" href="/2013/05/08/network-crackr%20.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--网络攻击技术的发展趋势--></a>
 
 
-	<a class="pagination-item older" href="/2013/07/25/list-element-set-dict.html"><!--在Python中列表、元组、集合、字典的比较-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+	<a class="pagination-item older" href="/2013/05/10/network-crackr%20.html"><!--Python中sys.argv用法-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
 
 </div>
 

@@ -12,7 +12,7 @@ title: "Python中sys.argv用法"
 sys.argv变量是一个字符串（包含了命令行参数）列表，即使用命令行传递给你的程序的参数。也包括python脚本名本身。其中sys为python标准模块，直接import sys插入使用，这是sys.argv[]能够使用的条件。argv是argument vector的简写，即参数指针。sys.argv[0]代表代码本身文件路径。sys.argv[1]代表地一个参数，依此类推。
 
 ####举例说明####
-{% highlight vim %}
+{% highlight python %}
     >>>import sys
     >>>python ×××.py  langoft.com for you to choose.  #sys.argv[0] 代表你运行的代码本身，即本例中'×××.py',而sys.argv[1]为第一个参数即'langoft.com',sys.argv[2]为'for'。
     >>>import os ,sys
@@ -21,7 +21,7 @@ sys.argv变量是一个字符串（包含了命令行参数）列表，即使用
 {% endhighlight %}
 ####应用实例####
 <pre>
-{% highlight vim %}
+{% highlight python %}
 \#!/usr/bin/env python
 \# -*- coding: utf-8 -*-
 \# A revised example from A Byte of Python
