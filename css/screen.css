@@ -290,7 +290,7 @@ a.pagination-item:hover{
 .pagination-item:last-child{
   float:right;
 }
-@media print, screen and (max-width:860px){
+@media print, screen and (max-width:980px){
   .wrapper{
      width:auto;
      margin:0;
