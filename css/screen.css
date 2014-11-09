@@ -147,7 +147,8 @@ ol.posts,ol.posts li{
 	padding:0;
 }
 ol.posts li{
-	margin-bottom:20px;	
+	margin-bottom:20px;
+	color:#999;
 }
 ol.posts .datetime{
 	display:inline-block;
