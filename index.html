@@ -4,7 +4,7 @@ title: 凉葱落
 ---
 
 <div id="home">
-  	<ol class="posts">
+  	<ol class="posts" reversed>
   	{% for post in site.posts %}
   		<li>
     		<span class="datetime muted" data-time="{{ post.date }}">{{ post.date | date_to_string }} </span>
