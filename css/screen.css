@@ -141,7 +141,10 @@ hr {
   float:right;
   padding-bottom:50px;
 }
-
+.content button{
+  padding:10px 20px;
+  font-size: 18px;
+}
 ol.posts,ol.posts li{
 	margin:0;
 	padding:0;
@@ -168,6 +171,9 @@ ol.posts .datetime{
 	width:260px;
 	position:fixed;
 	bottom:50px;
+}
+.footer .rss{
+  text-align: center;
 }
 /*****************************************************************************/
 /*
