@@ -321,6 +321,9 @@ a.pagination-item:hover{
   body{
     padding:20px 20px 20px 40px;
   }
+  .header{
+    text-align:center;  
+  }
   .pagination-item{
     padding: 10px 10px; 
   }
