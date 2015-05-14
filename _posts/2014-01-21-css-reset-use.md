@@ -25,25 +25,25 @@ b.webkit的默认HTML样式表
 
 #### 5. css reset 代码
 a. 最为简化的css reset：
-```python
+{% highlight vim %}
 *{
 	padding:0;
 	margin:0;
 }
-```
+{% endhighlight %}
 这是最简单的css重设，将所有的元素的padding和margin设为0.更改一下：
-```
+{% highlight vim %}
     *{
 	    padding:0;
 	    margin:0;
 	    border:0;
 	    outline:0;
     }
-```
+{% endhighlight %}
 在原来的基础上添加对border,outline属性的重设，设为初始值为0.
 
 b. 较为可行的css reset:
-```
+{% highlight vim %}
 *{
     margin:0;
     padding:0;
@@ -55,7 +55,7 @@ b. 较为可行的css reset:
     font-style:inherit;
     font-size:100%;
 }
-```
+{% endhighlight %}
 上述css reset较为简单实用。对边框、边距、字体等进行初始化。
 
 c.yahoo(YUI) css reset
