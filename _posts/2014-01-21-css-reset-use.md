@@ -11,8 +11,11 @@ title: "CSS Reset的应用"
 
 #### 2.reset.css
 在HTML中通过样式表进行浏览器的默认设置重置。    
-a.firfox的默认HTML样式表[http://hg.mozilla.org/mozilla-central/file/tip/layout/style/html.css](http://hg.mozilla.org/mozilla-central/file/tip/layout/style/html.css)
-b.webkit的默认HTML样式表[http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css](http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
+a.firfox的默认HTML样式表   
+>[http://hg.mozilla.org/mozilla-central/file/tip/layout/style/html.css](http://hg.mozilla.org/mozilla-central/file/tip/layout/style/html.css)   
+  
+b.webkit的默认HTML样式表
+>[http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css](http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
 
 #### 3.为什么要重置呢？
 因为浏览器众多，每个浏览器的样式不一，为了统一样式属性，便于编写css代码，提高各浏览器的显示效果的相同度。   
