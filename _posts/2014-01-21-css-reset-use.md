@@ -59,39 +59,39 @@ b. 较为可行的css reset:
 上述css reset较为简单实用。对边框、边距、字体等进行初始化。
 
 c.yahoo(YUI) css reset
-```
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
-    margin:0;
-    padding:0;
-}
-table{
-    border-collapse:collapse;
-    border-spacing:0;
-}
-fieldset,img{
-    border:0;
-}
-address,caption,cite,code,dfn,em,strong,th,var{
-    font-weight:normal;
-    font-style:normal;
-}
-ol,ul{
-    list-style:none;
-}
-caption,th{
-    text-align:left;
-}
-h1,h2,h3,h4,h5,h6{
-    font-weight:normal;
-    font-size:100%;
-}
-q:before, q:after{
-    content:"";
-}
-abbr,acronym{
-    border:0;
-}
-```
+
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+        margin:0;
+        padding:0;
+    }
+    table{
+        border-collapse:collapse;
+        border-spacing:0;
+    }
+    fieldset,img{
+        border:0;
+    }
+    address,caption,cite,code,dfn,em,strong,th,var{
+        font-weight:normal;
+        font-style:normal;
+    }
+    ol,ul{
+        list-style:none;
+    }
+    caption,th{
+        text-align:left;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-weight:normal;
+        font-size:100%;
+    }
+    q:before, q:after{
+        content:"";
+    }
+    abbr,acronym{
+        border:0;
+    }
+
 
 d.看看大型网站淘宝网css reset
 ```
