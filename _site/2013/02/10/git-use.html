@@ -34,25 +34,64 @@
     
     <div class="content">
     <header class="post-header">
-  <h1 class="post-title"><a href="/2013/05/23/python-env.html">Python和Mercurial环境的搭建</a></h2>
+  <h1 class="post-title"><a href="/2013/02/10/git-use.html">git使用备忘录</a></h2>
   <p class="post-meta">
     <i class="fa fa-calendar"></i>
-   写作时间：2013年05月23日
+   写作时间：2013年02月10日
   </p>
 </header>
 
 <div id="post">
 <hr />
 
-<h4 id="section">说明</h4>
-<p>本文所涉及需要安装的软件或工具是在kali（基于debian）系统下进行的。</p>
+<h4 id="git">1.git的用户信息配置与注销</h4>
+<p>git config –global  user.name “yourname”  <br />
+git config –global user.email “yourname@youremailprovider.com”  <br />
+git 配置文件的解析顺序(优先级递减）： <br />
+.git/config <br />
+ ~/.gitconfig  <br />
+/etc/gitconfig <br />
+可以通过find -name git*来查找配置信息. <br />
+用户信息注销使用如下命令: <br />
+ git config –unset –global user.email “yourname”</p>
 
-<h4 id="section-1">软件包的安装</h4>
-<p>kali系统是可以使用apt-get或aptitude命令进行安装的，至于apt-get与aptitude有什么不同，你可以百度谷歌一下，对你有好处。这里采用aptitude安装。 <br />
-有如下安装包需要安装：    </p>
+<h4 id="git-">2. git 仓库初始化</h4>
+<p>git init  #创建新仓库.    <br />
+   git add .  # 添加当前路径下的到仓库.   git add &lt;filename&gt; 添加文件到缓存区. <br />
+   git commit -m ‘‘代码提交信息注释” #提交实际改动到HEAD.</p>
 
-<div class="highlight"><pre><code class="language-vim" data-lang="vim">$ sudo aptitude <span class="p">-</span><span class="k">y</span> <span class="k">update</span>
-    $</code></pre></div>
+<h4 id="git-1">3. git推送改动</h4>
+<p>git push origin master  #将本定仓库HEAD中的改动文件通过该命令提交到远端仓库,其中master为你推送的任何分支.         </p>
+
+<h4 id="git--1">4 . git 的拷贝</h4>
+<p>git clone /path/to/repository #创建本地仓库的克隆版本. <br />
+   git clone username@host:/path/to/repository #克隆远端仓库.   </p>
+
+<h4 id="git--2">5 . git 的同步</h4>
+<ol>
+  <li>拷贝最新到本地的master下，并新建一个beta分支: <br />
+  git fetch server:/git/source_code  local_path master:beta   </li>
+  <li>比较master 与beta 的区别: <br />
+   git whatchanged master beta    </li>
+  <li>将本地的master内容与beta融合:    <br />
+选择1 <br />
+ git merge beta   # 把beta 放入master， 有点不建议这样，因为容易改动master <br />
+选择2 <br />
+ git checkout beta  <br />
+ git merge master  # 把master放入beta    </li>
+  <li>消除冲突 （如果有的话）   <br />
+ 用文本编辑器（vim） 编译，消除冲突     </li>
+</ol>
+
+<h4 id="git--3">6 . git 的更新</h4>
+<p>git push server:/git/source_code   # 注意，如果server只有一个master，默认是不允许修改的. <br />
+ 建议是推送到server 的master下的一个分支，等管理员检查后在更新server 的master. <br />
+ git push server:/git/source_code master:dev # 把最新上传的code 放在master下的dev分支.   </p>
+
+<h4 id="git--4">7 . git 的本地改动替换</h4>
+<p>git checkout –  &lt;filename&gt;   # 替换本地改动.  该命令使用HEAD中的最新内容替换你的工作目录中的文件,已增加到缓存区的改动及新文件不受影响.    <br />
+git fetch origin   # 从服务器上获取最新的版本. <br />
+git reset –hard origin/master #将本地主分支指向它.    </p>
 
 </div>
 
@@ -60,10 +99,10 @@
 
 <div class="pagination">
 
-	<a class="pagination-item newer" href="/2013/05/11/network-crackr%20.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--在Python中列表、元组、集合、字典的比较--></a>
+	<a class="pagination-item newer" href="/2013/01/11/wo-zai-xun-zhao.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--系统管理的基本命令--></a>
 
 
-	<a class="pagination-item older" href="/2013/07/25/list-element-set-dict.html"><!--在Python中列表、元组、集合、字典的比较-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+	<a class="pagination-item older" href="/2013/05/06/network-crack.html"><!--网络攻击技术的发展趋势-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
 
 </div>
 

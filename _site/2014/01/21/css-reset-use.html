@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>凉葱落</title>
+  <meta name="author" content="凉葱落" />
+  <meta name="description" content="一个关于凉葱落对互联网技术理解的网站,一个程序员对自己所学的东西的总结或整理的网站."/>
+  <meta name="keywords" content="凉葱落,互联网技术,HTML5,CSS3,Python,Linux,黑客,黑客攻击,黑客工具等" />
+
+  <link rel="stylesheet" href="/css/pygment.css" type="text/css" />
+  <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <p><img src="/images/logo.png"alt="凉葱落" /></p>
+      <p></p>
+      <h1><a href="/">凉葱落</a></h1>
+      <p>学无止境,静水流深.</p>
+      <p><a href="/about.html">关于我</a></p>
+
+      <p class="lianxi">
+        <a href="mailto:rontomai@gmail.com">rontomai@gmail.com</a><br/>
+        <a href="http://github.com/rontom/">github.com/rontom</a><br />
+        <a href="http://twitter.com/rontomai/">twitter.com/rontomai</a><br />
+      </p>
+    </div>
+    
+    <div class="content">
+    <header class="post-header">
+  <h1 class="post-title"><a href="/2014/01/21/css-reset-use.html">CSS Reset的应用</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+   写作时间：2014年01月21日
+  </p>
+</header>
+
+<div id="post">
+<hr />
+
+<h4 id="css-reset">1.CSS Reset的介绍</h4>
+<p>在HTML标签在浏览器里有默认的样式，例如 p 标签有上下边距，strong标签有字体加粗样式，em标签有字体倾斜样式。不同浏览器的默认样式之间也会有差别，例如ul默认带有缩进的样式，在IE下，它的缩进是通过margin实现的，而Firefox下，它的缩进是由padding实现的。在切换页面的时候，浏览器的默认样式往往会给我们带来麻烦，影响开发效率。所以解决的方法就是一开始就将浏览器的默认样式全部去掉，更准确说就是通过重新定义标签样式。“覆盖”浏览器的CSS默认属性。最最简单的说法就是把浏览器提供的默认样式覆盖掉！这就是CSS reset(来自百度百科)。</p>
+
+<h4 id="resetcss">2.reset.css</h4>
+<p>在HTML中通过样式表进行浏览器的默认设置重置。  <br />
+a.firfox的默认HTML样式表 <br />
+&gt;<a href="http://hg.mozilla.org/mozilla-central/file/tip/layout/style/html.css">http://hg.mozilla.org/mozilla-central/file/tip/layout/style/html.css</a>   </p>
+
+<p>b.webkit的默认HTML样式表
+&gt;<a href="http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css">http://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css</a></p>
+
+<h4 id="section">3.为什么要重置呢？</h4>
+<p>因为浏览器众多，每个浏览器的样式不一，为了统一样式属性，便于编写css代码，提高各浏览器的显示效果的相同度。   </p>
+
+<h4 id="css-reset-1">4. 比较流行的css reset</h4>
+<p>可以访问<a href="http://cssreset.com/">http://cssreset.com/</a>,上面给出几种重置代码。可以研究研究开发出自己的重置样式。</p>
+
+<h4 id="css-reset-">5. css reset 代码</h4>
+<p>a. 最为简化的css reset：</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim">*{
+	padding:<span class="m">0</span>;
+	margin:<span class="m">0</span>;
+}</code></pre></div>
+
+<p>这是最简单的css重设，将所有的元素的padding和margin设为0.更改一下：</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim">*{
+	    padding:<span class="m">0</span>;
+	    margin:<span class="m">0</span>;
+	    border:<span class="m">0</span>;
+	    outline:<span class="m">0</span>;
+    }</code></pre></div>
+
+<p>在原来的基础上添加对border,outline属性的重设，设为初始值为0.</p>
+
+<p>b. 较为可行的css reset:</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim">*{
+    margin:<span class="m">0</span>;
+    padding:<span class="m">0</span>;
+    border:<span class="m">0</span>;
+    outline:<span class="m">0</span>;
+    <span class="k">vertical</span><span class="p">-</span>align:baseline;
+    font<span class="p">-</span>family:inherit;
+    font<span class="p">-</span>weight:inherit;
+    font<span class="p">-</span>style:inherit;
+    font<span class="p">-</span>size:<span class="m">100</span>%;
+}</code></pre></div>
+
+<p>上述css reset较为简单实用。对边框、边距、字体等进行初始化。</p>
+
+<p>c.yahoo(YUI) css reset</p>
+
+<pre><code>body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+    margin:0;
+    padding:0;
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+fieldset,img{
+    border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var{
+    font-weight:normal;
+    font-style:normal;
+}
+ol,ul{
+    list-style:none;
+}
+caption,th{
+    text-align:left;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:normal;
+    font-size:100%;
+}
+q:before, q:after{
+    content:"";
+}
+abbr,acronym{
+    border:0;
+}
+</code></pre>
+
+<p>d.看看大型网站淘宝网css reset</p>
+
+<pre><code>html{
+    color:#000;
+    background-color:#fff;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,logend,input,button,textarea,p,blockquote,th,td{
+    margin:0;
+    padding:0;
+}
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+fieldset,img{
+    border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var{
+    font-style:normal;
+    font-weight:normal;
+}
+li{
+    list-style:none;
+}
+caption,th{
+    text-align:left;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size:100%;
+    font-weight:normal;
+}
+q:before,q:after{
+    content: '';
+}
+abbr,acronym{
+    border:none;
+    font-variant:normal;
+}
+sup{
+    vertical-align:text-top;
+}
+sub{
+    verticala-align:text-bottom;
+}
+input,button,textarea,select{
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+}
+input,button,textarea,select{
+    *font-size:100%;
+}
+legend{
+    color:#000;
+}
+del,ins{
+    text-decoration:none;
+}
+small{
+    font-size:100%;
+}
+</code></pre>
+
+<h4 id="section-1">6.小结</h4>
+<p>总之，css reset能够很好地处理不同浏览器显示效果相统一。</p>
+
+</div>
+
+<hr/>
+
+<div class="pagination">
+
+	<a class="pagination-item newer" href="/2013/07/25/list-element-set-dict.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--在Python中列表、元组、集合、字典的比较--></a>
+
+
+	<a class="pagination-item older" href="/2014/06/26/python-argv.html"><!--Python中sys.argv用法-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+
+</div>
+
+<div class="ds-thread">
+</div>
+
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hacklang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';
+		ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+<div id="related">
+ 	<h2>最新文章：</h2>
+ 	<hr/>
+ 	<ol class="posts">
+	
+  		<li>
+    		<span class="datetime muted" data-time="2015-01-12 00:00:00 +0800">12 Jan 2015 </span>
+    		<a href="/2015/01/12/animate.html">animate的使用</a>
+  		</li>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2015-01-10 00:00:00 +0800">10 Jan 2015 </span>
+    		<a href="/2015/01/10/cannonical-introduction.html">标签link的属性rel的值为cannonical介绍</a>
+  		</li>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2014-12-22 00:00:00 +0800">22 Dec 2014 </span>
+    		<a href="/2014/12/22/dns-prefetch-one.html">DNS Prefetch</a>
+  		</li>
+  	
+   </ol>
+</div>
+    </div>
+    
+
+    <!--div class="footer">   
+      <div class="rss">
+  	   <img src="/images/weixin.png" alt="scan me for you">
+      </div>
+    </div-->
+  
+  </div>
+
+  <!-- ClickTale Bottom part -->
+  <!--div id="ClickTaleDiv" style="display: none;"></div-->
+  <!--script type="text/javascript">
+  if(document.location.protocol!='https:')
+    document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+  </script-->
+  <!-- ClickTale end of Bottom part -->
+
+  <!-- Google Analytics -->
+  <!--script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-6016902-1");
+  pageTracker._trackPageview();
+  </script-->
+  <!-- Google Analytics end -->
+
+</body>
+</html>
