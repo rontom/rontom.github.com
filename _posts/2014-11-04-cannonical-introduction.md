@@ -10,7 +10,7 @@ title: "标签link的属性rel的值为cannonical介绍"
 &nbsp;&nbsp;&nbsp;&nbsp;此处cannonical是指来自：
 >&lt;link rel="cannonical" href="http://www.hacklang.me">
 
-中的"cannonical.它由 Google、雅虎、微软等搜索引擎一起推出的一个标签属性值，主要是用来解决由于网址形式不同内容相同而造成的内容重复问题，有助于搜索引擎能够可选择性抓取你想要强调的内容。
+中的"cannonical.它由 Google、Yahoo、Microsoft等搜索引擎一起推出的一个标签属性值，主要是用来解决由于网址形式不同内容相同而造成的内容重复问题，有助于搜索引擎能够可选择性抓取你想要强调的内容。
 
 ### 举例
 &nbsp;&nbsp;&nbsp;&nbsp;举个例子，假设有如下的网址：   
