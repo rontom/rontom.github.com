@@ -1,67 +1,67 @@
 ---
 layout: post
 published: true
-title: "NPM½éÉÜ¼°Ê¹ÓÃ"
+title: "NPMä»‹ç»åŠä½¿ç”¨"
 ---
 
-------------------------------------------------------    
+--------------------------------------------------- 
  
-####NPMµÄ½éÉÜ####       
+####NPMçš„ä»‹ç»####       
 
-NPMÊÇNode Package Manager,ÊÇÒ»¸öNodeJS°ü¹ÜÀíºÍ·Ö·¢¹¤¾ß£¬Ïàµ±ÓÚrubyµÄgem£¬PythonµÄpypi¡¢setuptools£¬PHPµÄpear¡£ÊÇ·Ç¹Ù·½µÄ·¢²¼NodeÄ£¿é£¨°ü£©µÄ±ê×¼¡£ÄÜ½â¾öNodeJS´úÂë²¿ÊğÉÏµÄºÜ¶àÎÊÌâ¡£Ä¿Ç°NodeJSÒÑ¾­¼¯³ÉÁËNPM¡£¿ÉÒÔÃüÁîĞĞÊäÈë¡°npm -v¡±²é¿´ÊÇ·ñ°²×°³É¹¦¡£
+NPMæ˜¯Node Package Manager,æ˜¯ä¸€ä¸ªNodeJSåŒ…ç®¡ç†å’Œåˆ†å‘å·¥å…·ï¼Œç›¸å½“äºrubyçš„gemï¼ŒPythonçš„pypiã€setuptoolsï¼ŒPHPçš„pearã€‚æ˜¯éå®˜æ–¹çš„å‘å¸ƒNodeæ¨¡å—ï¼ˆåŒ…ï¼‰çš„æ ‡å‡†ã€‚èƒ½è§£å†³NodeJSä»£ç éƒ¨ç½²ä¸Šçš„å¾ˆå¤šé—®é¢˜ã€‚ç›®å‰NodeJSå·²ç»é›†æˆäº†NPMã€‚å¯ä»¥å‘½ä»¤è¡Œè¾“å…¥â€œnpm -vâ€æŸ¥çœ‹æ˜¯å¦å®‰è£…æˆåŠŸã€‚
 
-####NPMµÄ³£ÓÃÃüÁî####
+####NPMçš„å¸¸ç”¨å‘½ä»¤####
 
-NPMÌá¹©ÁËĞí¶àÃüÁî£¬ÈçinstallºÍpublish£¬¿ÉÊ¹ÓÃnpm help²é¿´ËùÓĞÃüÁî¡£ÏÂÃæÊÇÒ»Ğ©³£ÓÃµÄÃüÁî£º
+NPMæä¾›äº†è®¸å¤šå‘½ä»¤ï¼Œå¦‚installå’Œpublishï¼Œå¯ä½¿ç”¨npm helpæŸ¥çœ‹æ‰€æœ‰å‘½ä»¤ã€‚ä¸‹é¢æ˜¯ä¸€äº›å¸¸ç”¨çš„å‘½ä»¤ï¼š
  
- > * npm help \<command> ¿É²é¿´Ä³ÌõÃüÁîµÄÏêÏ¸°ïÖú£¬ÀıÈçnpm help install
- > * npm install \<package name> -g ¶Ô°ü½øĞĞÈ«Óò°²×°£¬È«Óò°²×°°üÍ¨³£Ö»ÊÇÎªÁËÖ´ĞĞÔËĞĞ¶øÒÑ¡£ÀıÈç npm install express -g ¡£Èç¹û°ü°²×°ÔÚ²»Í¬ÏîÄ¿ÖĞ¡£Ê¹ÓÃ npm install \<package name>¡£
- > * npm uninstall \<package name> -g Ğ¶ÔØÈ«Óò°ü¡£
- > * npm search \<package name> ËÑÑ°°ü¡£ÀıÈç npm search  express
- > * npm ls -g ÁĞ³öÈ«Óò°ü¡£npm ls -gl ÁĞ³öÈ«Óò°üÏêÏ¸ĞÅÏ¢¡£ÁĞ³öÄ³ÏîÄ¿°üµÄ·½·¨£¬ÏÈ½øÈë¸ÃÏîÄ¿ËùÔÚÄ¿Â¼£¬ npm ls -l¡£
- > * npm update -g ¸üĞÂÈ«Óò°ü¡£½øÈëÏîÄ¿µÄËùÔÚÄ¿Â¼£¬npm update¡£
- >* npm config  ÅäÖÃ°ü¡£ npm config set registry https://registry.npm.taobao.org
- >* npm explore . --git pull origin master .¸üĞÂµ±Ç°µÄ git ×ÊÔ´¿â¡£
- >* npm edit ±à¼­µ±Ç°°ü»òÄ£¿éµÄËùÓĞÒÀÀµÄ£¿é¡£
- >* npm docs \<package name> ´ò¿ª\<package name>Ä£¿éµÄÎÄµµ¡£
- >* npm outdated \<package name>²é¿´\<package name>ÊÇ·ñÓĞĞÂ°æ±¾¡£
- > * npm cache clear Çå¿ÕNPM±¾µØ»º´æ£¬ÓÃÓÚ¶Ô¸¶Ê¹ÓÃÏàÍ¬°æ±¾ºÅ·¢²¼ĞÂ°æ±¾´úÂëµÄÈË¡£
- > * npm publish \<package name>@\<version> ·¢²¼°æ±¾´úÂë¡£
+ > * npm help \<command> å¯æŸ¥çœ‹æŸæ¡å‘½ä»¤çš„è¯¦ç»†å¸®åŠ©ï¼Œä¾‹å¦‚npm help install
+ > * npm install \<package name> -g å¯¹åŒ…è¿›è¡Œå…¨åŸŸå®‰è£…ï¼Œå…¨åŸŸå®‰è£…åŒ…é€šå¸¸åªæ˜¯ä¸ºäº†æ‰§è¡Œè¿è¡Œè€Œå·²ã€‚ä¾‹å¦‚ npm install express -g ã€‚å¦‚æœåŒ…å®‰è£…åœ¨ä¸åŒé¡¹ç›®ä¸­ã€‚ä½¿ç”¨ npm install \<package name>ã€‚
+ > * npm uninstall \<package name> -g å¸è½½å…¨åŸŸåŒ…ã€‚
+ > * npm search \<package name> æœå¯»åŒ…ã€‚ä¾‹å¦‚ npm search  express
+ > * npm ls -g åˆ—å‡ºå…¨åŸŸåŒ…ã€‚npm ls -gl åˆ—å‡ºå…¨åŸŸåŒ…è¯¦ç»†ä¿¡æ¯ã€‚åˆ—å‡ºæŸé¡¹ç›®åŒ…çš„æ–¹æ³•ï¼Œå…ˆè¿›å…¥è¯¥é¡¹ç›®æ‰€åœ¨ç›®å½•ï¼Œ npm ls -lã€‚
+ > * npm update -g æ›´æ–°å…¨åŸŸåŒ…ã€‚è¿›å…¥é¡¹ç›®çš„æ‰€åœ¨ç›®å½•ï¼Œnpm updateã€‚
+ >* npm config  é…ç½®åŒ…ã€‚ npm config set registry https://registry.npm.taobao.org
+ >* npm explore . --git pull origin master .æ›´æ–°å½“å‰çš„ git èµ„æºåº“ã€‚
+ >* npm edit ç¼–è¾‘å½“å‰åŒ…æˆ–æ¨¡å—çš„æ‰€æœ‰ä¾èµ–æ¨¡å—ã€‚
+ >* npm docs \<package name> æ‰“å¼€\<package name>æ¨¡å—çš„æ–‡æ¡£ã€‚
+ >* npm outdated \<package name>æŸ¥çœ‹\<package name>æ˜¯å¦æœ‰æ–°ç‰ˆæœ¬ã€‚
+ > * npm cache clear æ¸…ç©ºNPMæœ¬åœ°ç¼“å­˜ï¼Œç”¨äºå¯¹ä»˜ä½¿ç”¨ç›¸åŒç‰ˆæœ¬å·å‘å¸ƒæ–°ç‰ˆæœ¬ä»£ç çš„äººã€‚
+ > * npm publish \<package name>@\<version> å‘å¸ƒç‰ˆæœ¬ä»£ç ã€‚
  > * npm unpublish \<package name>@\<version>
- > * npm adduser ½øĞĞ×¢²á·¢²¼¡£ÕâÊ±ĞèÒª½øĞĞ±à¼­package.json¡£package.jsonÒ»°ãÀàËÆÈçÏÂ£º
+ > * npm adduser è¿›è¡Œæ³¨å†Œå‘å¸ƒã€‚è¿™æ—¶éœ€è¦è¿›è¡Œç¼–è¾‘package.jsonã€‚package.jsonä¸€èˆ¬ç±»ä¼¼å¦‚ä¸‹ï¼š
     
     {
-    "name": "express",           # °üÃû£¬ÔÚNPM·şÎñÆ÷ÉÏĞëÒª±£³ÖÎ¨Ò»
-    "version": "1.0.0",            # µ±Ç°°æ±¾ºÅ
-    "dependencies": {              # µÚÈı·½°üÒÀÀµ£¬ĞèÒªÖ¸¶¨°üÃûºÍ°æ±¾ºÅ
+    "name": "express",           # åŒ…åï¼Œåœ¨NPMæœåŠ¡å™¨ä¸Šé¡»è¦ä¿æŒå”¯ä¸€
+    "version": "1.0.0",            # å½“å‰ç‰ˆæœ¬å·
+    "dependencies": {              # ç¬¬ä¸‰æ–¹åŒ…ä¾èµ–ï¼Œéœ€è¦æŒ‡å®šåŒ…åå’Œç‰ˆæœ¬å·
         "argv": "0.0.2"
       },
-    "main": "./lib/echo.js",       # Èë¿ÚÄ£¿éÎ»ÖÃ
+    "main": "./lib/echo.js",       # å…¥å£æ¨¡å—ä½ç½®
     "bin" : {
-        "node-echo": "./bin/node-echo"      # ÃüÁîĞĞ³ÌĞòÃûºÍÖ÷Ä£¿éÎ»ÖÃ
+        "node-echo": "./bin/node-echo"      # å‘½ä»¤è¡Œç¨‹åºåå’Œä¸»æ¨¡å—ä½ç½®
       }
     }
     
 
-####¹úÄÚNPM¾µÏñÊ¹ÓÃ####
+####å›½å†…NPMé•œåƒä½¿ç”¨####
 
-ÌÔ±¦npm¾µÏñ
-> ËÑË÷µØÖ·£ºhttp://npm.taobao.org/   
-> registryµØÖ·£ºhttp://registry.npm.taobao.org/
+æ·˜å®npmé•œåƒ
+> æœç´¢åœ°å€ï¼šhttp://npm.taobao.org/   
+> registryåœ°å€ï¼šhttp://registry.npm.taobao.org/
 
-cnpmjs¾µÏñ
+cnpmjsé•œåƒ
 
-> ËÑË÷µØÖ·£ºhttp://cnpmjs.org/   
-registryµØÖ·£ºhttp://r.cnpmjs.org/
+> æœç´¢åœ°å€ï¼šhttp://cnpmjs.org/   
+registryåœ°å€ï¼šhttp://r.cnpmjs.org/
 
-npm¾µÏñÊ¹ÓÃ    
+npmé•œåƒä½¿ç”¨    
  
- 1.ÁÙÊ±Ê¹ÓÃ   
+ 1.ä¸´æ—¶ä½¿ç”¨   
 > npm --registry https://registry.npm.taobao.org install express         
 
-2.ÓÀ¾ÃÊ¹ÓÃ   
->  npm config set registry https://registry.npm.taobao.org  // ÅäÖÃºó¿ÉÍ¨¹ıÏÂÃæ·½Ê½À´ÑéÖ¤ÊÇ·ñ³É¹¦  
+2.æ°¸ä¹…ä½¿ç”¨   
+>  npm config set registry https://registry.npm.taobao.org  // é…ç½®åå¯é€šè¿‡ä¸‹é¢æ–¹å¼æ¥éªŒè¯æ˜¯å¦æˆåŠŸ  
 npm config get registry
-// »ò   
+// æˆ–   
 npm info express
  
