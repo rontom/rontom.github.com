@@ -185,8 +185,15 @@
 	background: #f5f5f5 no-repeat scroll 0% 0%;
 	transition:background-color 5s;
 }
+#navbar a{
+  color:#000;
+  transition:color 5s;
+}
 #navbar:hover{
-	background:red no-repeat scroll 0% 0%;
+	background:#000 no-repeat scroll 0% 0%;
+}
+#navbar:hover a{
+  color: #fff;
 }
 #index-banner{
 	
