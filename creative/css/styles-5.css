@@ -1,0 +1,298 @@
+@import "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css";
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,100,400);
+
+html {
+  height: 100%;
+  position: relative
+}
+
+body {
+  background-color: #f39c12;
+  font-family: "Lato", sans-serif;
+  height: 2000px;
+  color: white
+}
+
+li.new-item {
+  -webkit-transform-origin: 50% 0%;
+  -ms-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-animation: new-item-animation .3s linear forwards;
+  -o-animation: new-item-animation .3s linear forwards;
+  animation: new-item-animation .3s linear forwards
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes new-item-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-400px);
+    -ms-transform: translateY(-400px);
+    -o-transform: translateY(-400px);
+    transform: translateY(-400px)
+  }
+
+  to {
+    opacity: 1;
+    transform : translateY(0)
+  }
+}
+
+li.restored-item {
+  -webkit-transform: translateX(300px);
+  -ms-transform: translateX(300px);
+  -o-transform: translateX(300px);
+  transform: translateX(300px);
+  -webkit-animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s cubic-bezier(0,.8,.32,1.07) forwards;
+  -o-animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s cubic-bezier(0,.8,.32,1.07) forwards;
+  animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s cubic-bezier(0,.8,.32,1.07) forwards
+}
+
+@keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@keyframes restored-item-animation {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0)
+  }
+}
+
+li.removed-item {
+  -webkit-animation: removed-item-animation 2s cubic-bezier(.55,-0.04,.91,.94) forwards;
+  -o-animation: removed-item-animation 2s cubic-bezier(.55,-0.04,.91,.94) forwards;
+  animation: removed-item-animation 2s cubic-bezier(.55,-0.04,.91,.94) forwards;
+  -webkit-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+  transform-origin: 0% 100%
+}
+
+@keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateZ(0);
+    -ms-transform: rotateZ(0);
+    -o-transform: rotateZ(0);
+    transform: rotateZ(0)
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: rotateZ(140deg);
+    -ms-transform: rotateZ(140deg);
+    -o-transform: rotateZ(140deg);
+    transform: rotateZ(140deg)
+  }
+
+  40% {
+    opacity: 1;
+    -webkit-transform: rotateZ(60deg);
+    -ms-transform: rotateZ(60deg);
+    -o-transform: rotateZ(60deg);
+    transform: rotateZ(60deg)
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: rotateZ(110deg);
+    -ms-transform: rotateZ(110deg);
+    -o-transform: rotateZ(110deg);
+    transform: rotateZ(110deg)
+  }
+
+  70% {
+    opacity: 1;
+    -webkit-transform: rotateZ(90deg) translateX(0);
+    -ms-transform: rotateZ(90deg) translateX(0);
+    -o-transform: rotateZ(90deg) translateX(0);
+    transform: rotateZ(90deg) translateX(0)
+  }
+
+  90% {
+    opacity: 1;
+    -webkit-transform: rotateZ(90deg) translateX(600px);
+    -ms-transform: rotateZ(90deg) translateX(600px);
+    -o-transform: rotateZ(90deg) translateX(600px);
+    transform: rotateZ(90deg) translateX(600px)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateZ(90deg) translateX(600px);
+    -ms-transform: rotateZ(90deg) translateX(600px);
+    -o-transform: rotateZ(90deg) translateX(600px);
+    transform: rotateZ(90deg) translateX(600px)
+  }
+}
+
+
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1
+  }
+}
+
+@-o-keyframes fadeIn {
+  to {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes new-item-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-400px);
+    transform: translateY(-400px)
+  }
+
+  to {
+    opacity: 1;
+    transform : translateY(0)
+  }
+}
+
+@-o-keyframes new-item-animation {
+  from {
+    opacity: 0;
+    -o-transform: translateY(-400px);
+    transform: translateY(-400px)
+  }
+
+  to {
+    opacity: 1;
+    transform : translateY(0)
+  }
+}
+
+@-webkit-keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@-o-keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@-webkit-keyframes restored-item-animation {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0)
+  }
+}
+
+@-o-keyframes restored-item-animation {
+  to {
+    opacity: 1;
+    -o-transform: translateX(0);
+    transform: translateX(0)
+  }
+}
+
+@-webkit-keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateZ(0);
+    transform: rotateZ(0)
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: rotateZ(140deg);
+    transform: rotateZ(140deg)
+  }
+
+  40% {
+    opacity: 1;
+    -webkit-transform: rotateZ(60deg);
+    transform: rotateZ(60deg)
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: rotateZ(110deg);
+    transform: rotateZ(110deg)
+  }
+
+  70% {
+    opacity: 1;
+    -webkit-transform: rotateZ(90deg) translateX(0);
+    transform: rotateZ(90deg) translateX(0)
+  }
+
+  90% {
+    opacity: 1;
+    -webkit-transform: rotateZ(90deg) translateX(600px);
+    transform: rotateZ(90deg) translateX(600px)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateZ(90deg) translateX(600px);
+    transform: rotateZ(90deg) translateX(600px)
+  }
+}
+
+@-o-keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    -o-transform: rotateZ(0);
+    transform: rotateZ(0)
+  }
+
+  20% {
+    opacity: 1;
+    -o-transform: rotateZ(140deg);
+    transform: rotateZ(140deg)
+  }
+
+  40% {
+    opacity: 1;
+    -o-transform: rotateZ(60deg);
+    transform: rotateZ(60deg)
+  }
+
+  60% {
+    opacity: 1;
+    -o-transform: rotateZ(110deg);
+    transform: rotateZ(110deg)
+  }
+
+  70% {
+    opacity: 1;
+    -o-transform: rotateZ(90deg) translateX(0);
+    transform: rotateZ(90deg) translateX(0)
+  }
+
+  90% {
+    opacity: 1;
+    -o-transform: rotateZ(90deg) translateX(600px);
+    transform: rotateZ(90deg) translateX(600px)
+  }
+
+  100% {
+    opacity: 0;
+    -o-transform: rotateZ(90deg) translateX(600px);
+    transform: rotateZ(90deg) translateX(600px)
+  }
+}

@@ -1,0 +1,170 @@
+@import "http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css";
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,100,400);
+
+html {
+  height: 100%;
+  position: relative
+}
+
+body {
+  background-color: #8e44ad;
+  font-family: "Lato", sans-serif;
+  height: 2000px;
+  color: white
+}
+
+li.new-item {
+  opacity: 0;
+  -webkit-animation: fadeIn .3s linear forwards;
+  -o-animation: fadeIn .3s linear forwards;
+  animation: fadeIn .3s linear forwards
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1
+  }
+}
+
+li.restored-item {
+  -webkit-animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s ease-out forwards;
+  -o-animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s ease-out forwards;
+  animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s ease-out forwards
+}
+
+@keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@keyframes restored-item-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(4);
+    -ms-transform: scale(4);
+    -o-transform: scale(4);
+    transform: scale(4)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+li.removed-item {
+  -webkit-animation: removed-item-animation .6s ease-out forwards;
+  -o-animation: removed-item-animation .6s ease-out forwards;
+  animation: removed-item-animation .6s ease-out forwards;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%
+}
+
+@keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(4);
+    -ms-transform: scale(4);
+    -o-transform: scale(4);
+    transform: scale(4)
+  }
+}
+
+
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1
+  }
+}
+
+@-o-keyframes fadeIn {
+  to {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@-o-keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@-webkit-keyframes restored-item-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(4);
+    transform: scale(4)
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-o-keyframes restored-item-animation {
+  0% {
+    opacity: 0;
+    -o-transform: scale(4);
+    transform: scale(4)
+  }
+
+  100% {
+    opacity: 1;
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(4);
+    transform: scale(4)
+  }
+}
+
+@-o-keyframes removed-item-animation {
+  0% {
+    opacity: 1;
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+
+  100% {
+    opacity: 0;
+    -o-transform: scale(4);
+    transform: scale(4)
+  }
+}
