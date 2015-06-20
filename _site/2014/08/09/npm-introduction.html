@@ -34,23 +34,81 @@
     
     <div class="content">
     <header class="post-header">
-  <h1 class="post-title"><a href="/2014/07/01/python-SyntaxError.html">Python代码编写出现的错误</a></h2>
+  <h1 class="post-title"><a href="/2014/08/09/npm-introduction.html">NPM介绍及使用</a></h2>
   <p class="post-meta">
     <i class="fa fa-calendar"></i>
-   写作时间：2014年07月01日
+   写作时间：2014年08月09日
   </p>
 </header>
 
 <div id="post">
 <hr />
 
-<h4 id="pythonsyntaxerrornon-ascii-character-xe5">python默认编码错误SyntaxError:Non-ASCII character ‘\xe5’之解决方法</h4>
+<h4 id="npm">NPM的介绍</h4>
 
-<p>在编写python时，当使用中文输出或注释时运行脚本，会提示错误信息：	
-SyntaxError:Non-SACII character ‘\xe5’ in file……</p>
+<p>NPM是Node Package Manager,是一个NodeJS包管理和分发工具，相当于ruby的gem，Python的pypi、setuptools，PHP的pear。是非官方的发布Node模块（包）的标准。能解决NodeJS代码部署上的很多问题。目前NodeJS已经集成了NPM。可以命令行输入“npm -v”查看是否安装成功。</p>
 
-<p>解决方法：python的默认编码文件用的是ASCII码，你将文件保存为UTF-8，解决方法很简单，在文件开头加入
-#-<em>-coding:utf-8-</em>- 或者是#coding=utf-8</p>
+<h4 id="npm-1">NPM的常用命令</h4>
+
+<p>NPM提供了许多命令，如install和publish，可使用npm help查看所有命令。下面是一些常用的命令：</p>
+
+<blockquote>
+  <ul>
+    <li>npm help &lt;command&gt; 可查看某条命令的详细帮助，例如npm help install</li>
+    <li>npm install &lt;package name&gt; -g 对包进行全域安装，全域安装包通常只是为了执行运行而已。例如 npm install express -g 。如果包安装在不同项目中。使用 npm install &lt;package name&gt;。</li>
+    <li>npm uninstall &lt;package name&gt; -g 卸载全域包。</li>
+    <li>npm search &lt;package name&gt; 搜寻包。例如 npm search  express</li>
+    <li>npm ls -g 列出全域包。npm ls -gl 列出全域包详细信息。列出某项目包的方法，先进入该项目所在目录， npm ls -l。</li>
+    <li>npm update -g 更新全域包。进入项目的所在目录，npm update。</li>
+    <li>npm config  配置包。 npm config set registry https://registry.npm.taobao.org</li>
+    <li>npm explore . –git pull origin master .更新当前的 git 资源库。</li>
+    <li>npm edit 编辑当前包或模块的所有依赖模块。</li>
+    <li>npm docs &lt;package name&gt; 打开&lt;package name&gt;模块的文档。</li>
+    <li>npm outdated &lt;package name&gt;查看&lt;package name&gt;是否有新版本。</li>
+    <li>npm cache clear 清空NPM本地缓存，用于对付使用相同版本号发布新版本代码的人。</li>
+    <li>npm publish &lt;package name&gt;@&lt;version&gt; 发布版本代码。</li>
+    <li>npm unpublish &lt;package name&gt;@&lt;version&gt;</li>
+    <li>npm adduser 进行注册发布。这时需要进行编辑package.json。package.json一般类似如下：</li>
+  </ul>
+</blockquote>
+
+<pre><code>{
+"name": "express",           # 包名，在NPM服务器上须要保持唯一
+"version": "1.0.0",            # 当前版本号
+"dependencies": {              # 第三方包依赖，需要指定包名和版本号
+    "argv": "0.0.2"
+  },
+"main": "./lib/echo.js",       # 入口模块位置
+"bin" : {
+    "node-echo": "./bin/node-echo"      # 命令行程序名和主模块位置
+  }
+}
+</code></pre>
+
+<h4 id="npm-2">国内NPM镜像使用</h4>
+
+<p>淘宝npm镜像
+&gt; 搜索地址：http://npm.taobao.org/ <br />
+&gt; registry地址：http://registry.npm.taobao.org/</p>
+
+<p>cnpmjs镜像</p>
+
+<blockquote>
+  <p>搜索地址：http://cnpmjs.org/ <br />
+registry地址：http://r.cnpmjs.org/</p>
+</blockquote>
+
+<p>npm镜像使用    </p>
+
+<p>1.临时使用 <br />
+&gt; npm –registry https://registry.npm.taobao.org install express         </p>
+
+<p>2.永久使用 <br />
+&gt;  npm config set registry https://registry.npm.taobao.org  // 配置后可通过下面方式来验证是否成功<br />
+npm config get registry
+// 或 <br />
+npm info express</p>
+
 
 </div>
 
@@ -58,10 +116,10 @@ SyntaxError:Non-SACII character ‘\xe5’ in file……</p>
 
 <div class="pagination">
 
-	<a class="pagination-item newer" href="/2014/06/26/python-argv.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--Python中sys.argv用法--></a>
+	<a class="pagination-item newer" href="/2014/07/01/python-SyntaxError.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--Python代码编写出现的错误--></a>
 
 
-	<a class="pagination-item older" href="/2014/08/09/npm-introduction.html"><!--NPM介绍及使用-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+	<a class="pagination-item older" href="/2014/11/27/text-middle-setting.html"><!--网页设计中文本如何垂直居中备案录-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
 
 </div>
 

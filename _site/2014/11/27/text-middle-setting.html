@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>凉葱落</title>
+  <meta name="author" content="凉葱落" />
+  <meta name="description" content="一个关于凉葱落对互联网技术理解的网站,一个程序员对自己所学的东西的总结或整理的网站."/>
+  <meta name="keywords" content="凉葱落,互联网技术,HTML5,CSS3,Python,Linux,黑客,黑客攻击,黑客工具等" />
+
+  <link rel="stylesheet" href="/css/pygment.css" type="text/css" />
+  <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <p><img src="/images/logo.png"alt="凉葱落" /></p>
+      <p></p>
+      <h1><a href="/">凉葱落</a></h1>
+      <p>学无止境,静水流深.</p>
+      <p><a href="/about.html">关于我</a></p>
+
+      <p class="lianxi">
+        <a href="mailto:rontomai@gmail.com">rontomai@gmail.com</a><br/>
+        <a href="http://github.com/rontom/">github.com/rontom</a><br />
+        <a href="http://twitter.com/rontomai/">twitter.com/rontomai</a><br />
+      </p>
+    </div>
+    
+    <div class="content">
+    <header class="post-header">
+  <h1 class="post-title"><a href="/2014/11/27/text-middle-setting.html">网页设计中文本如何垂直居中备案录</a></h2>
+  <p class="post-meta">
+    <i class="fa fa-calendar"></i>
+   写作时间：2014年11月27日
+  </p>
+</header>
+
+<div id="post">
+<hr />
+
+<h3 id="section">问题来袭</h3>
+<p>我在网页设计中，常常出现如何使文本块居中所在的区域块？我知道有一个标签属性<code>vertical-align</code>可以设置，但每次都无法另外满意。即使能够得到最终的结果。于是我从网上找了找，发现一些方法可以使用。</p>
+
+<h3 id="section-1">针对单行文本</h3>
+<p>对于单行文本的，顾名思义得进行<code>line-height</code>设置。方法：把文本块的段落高度<code>line-height</code>与其所在区域块高度<code>height</code>设为一致。 <br />
+<b>案例：</b></p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-cn"&gt;
+&lt;head&gt;
+  	&lt;meta charset="utf-8"&gt;
+  	&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"&gt;
+  	&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  	&lt;title&gt;学无止境，静水流深
+  	&lt;meta name="description" content=""&gt;
+	&lt;!-- Favicons --&gt;
+	&lt;!-- CSS --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div style="height:68px ; line-height:68px;"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 id="section-2">针对多行文本</h3>
+<p>对于多行，由于无法确定多行的高度，因此固定设定高度是不适合的。对所含区域高度得进行自适应设定，然后通过 <code>padding</code>属性进行设置。但是这样去进行设定其实是有一定要求的，你的<code>padding</code>值得根据上下内容进行操作。 <br />
+<b>案例：</b></p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-cn"&gt;
+&lt;head&gt;
+  	&lt;meta charset="utf-8"&gt;
+  	&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"&gt;
+  	&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  	&lt;title&gt;学无止境，静水流深
+  	&lt;meta name="description" content=""&gt;
+	&lt;!-- Favicons --&gt;
+	&lt;!-- CSS --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div style="padding:200px 200px; height:600px;width:600px; "&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 id="section-3">浏览器居中设定</h3>
+<p>浏览器居中设定相对来说比较简单，把属性<code>position</code>的属性值市委绝对，然后<code>top&lt;/top&gt;的属性值为（50%-width/2）,同理<code>left</code>的属性值为(50%-width/2).这样就完成了设置。   
+<b>案例：</b></code></p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-cn"&gt;
+&lt;head&gt;
+  	&lt;meta charset="utf-8"&gt;
+  	&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"&gt;
+  	&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  	&lt;title&gt;学无止境，静水流深
+  	&lt;meta name="description" content=""&gt;
+	&lt;!-- Favicons --&gt;
+	&lt;!-- CSS --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div style="position:absolute;top:40%;left:40%; height:20%;width:20%; "&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 id="section-4">区域块文本垂直居中</h3>
+<p>上述三种方法很难很好地处理区域块文本垂直居中。通过标签嵌套进行。</p>
+<pre>
+ &lt;div class="one"&gt;
+     &lt;div class="two"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<p>设置.one 和.two的css样式为：   </p>
+<pre>
+.one{
+    display:table;
+    width:100%;
+    height:400px;
+    overflow:hidden;
+    background:#ccc;
+}
+.two{
+    display:table-cell;
+    verital-align:middle;
+    margin-left:30%;
+}
+</pre>
+
+<p>.one中<code>display</code>的属性值设为table，表示此元素作为块级表格来显示（类似&lt;table&gt;）,表格前后带有换行符。.two中<code>display</code>的属性值设为table-cell，表示此元素作为表格单元显示（类似&lt;td&gt;和&lt;th&gt;）。那么上面文本块相当于一个单元表格中的文本块。 <br />
+<b>注释</b>：如果规定了<code>!DOCTYPE</code>,则Internet Explorer 8(以及更高版本)可以支持”table-cell”属性值。对于&lt; IE 8 的其实还有一种不错方法进行。   </p>
+<pre>
+ &lt;div class="one"&gt;
+     &lt;div class="two"&gt;
+         &lt;div class="three"&gt;
+          &lt;/div&gt;   
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<p>设置.one , .two, .three的css样式如下：</p>
+<pre>
+.one{
+    position:relative;
+}
+.two{
+    position:absolute;
+    top:50%;
+}
+.three{
+     position:relatvie;
+     top:-50%;
+}
+</pre>
+
+<p>这样就完美的解决了。</p>
+
+<h3 id="section-5">小结</h3>
+<p>上述无疑是对<code>position</code>和<code>display</code>的属性进行相应设置而得出的所需效果。</p>
+
+</div>
+
+<hr/>
+
+<div class="pagination">
+
+	<a class="pagination-item newer" href="/2014/08/09/npm-introduction.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--NPM介绍及使用--></a>
+
+
+	<a class="pagination-item older" href="/2014/12/22/dns-prefetch-one.html"><!--DNS Prefetch-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+
+</div>
+
+<div class="ds-thread">
+</div>
+
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hacklang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';
+		ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+<div id="related">
+ 	<h2>最新文章：</h2>
+ 	<hr/>
+ 	<ol class="posts">
+	
+  		<li>
+    		<span class="datetime muted" data-time="2015-01-12 00:00:00 +0800">12 Jan 2015 </span>
+    		<a href="/2015/01/12/animate.html">animate的使用</a>
+  		</li>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2015-01-10 00:00:00 +0800">10 Jan 2015 </span>
+    		<a href="/2015/01/10/cannonical-introduction.html">标签link的属性rel的值为cannonical介绍</a>
+  		</li>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2014-12-22 00:00:00 +0800">22 Dec 2014 </span>
+    		<a href="/2014/12/22/dns-prefetch-one.html">DNS Prefetch</a>
+  		</li>
+  	
+   </ol>
+</div>
+    </div>
+    
+
+    <!--div class="footer">   
+      <div class="rss">
+  	   <img src="/images/weixin.png" alt="scan me for you">
+      </div>
+    </div-->
+  
+  </div>
+
+  <!-- ClickTale Bottom part -->
+  <!--div id="ClickTaleDiv" style="display: none;"></div-->
+  <!--script type="text/javascript">
+  if(document.location.protocol!='https:')
+    document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
+  </script-->
+  <!-- ClickTale end of Bottom part -->
+
+  <!-- Google Analytics -->
+  <!--script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-6016902-1");
+  pageTracker._trackPageview();
+  </script-->
+  <!-- Google Analytics end -->
+
+</body>
+</html>
