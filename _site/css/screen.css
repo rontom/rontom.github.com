@@ -128,10 +128,7 @@ hr {
 	height: 36px;
 	margin-bottom: 15px;
 	border-bottom: 1px dashed #ccc;
-}
-.navbar{
-	margin-left:15px;
-	margin-right:15px;
+	padding: 0 15px;
 }
 .navbar li{
 	list-style: none;
@@ -345,12 +342,10 @@ a.pagination-item:hover{
   }
   .header{
     text-align:center;
+	padding: 0;
   }
   .lianxi{
     display: none;
-  }
-  .content{
-    padding: 20px 10px 20px 15px;
   }
 }
 @media print, screen and (max-width: 480px){
@@ -359,6 +354,7 @@ a.pagination-item:hover{
   }
   .header{
     text-align:center;
+	padding: 0;
   }
   .pagination-item{
     padding: 10px 10px;
