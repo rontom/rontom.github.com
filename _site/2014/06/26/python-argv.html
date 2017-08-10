@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>凉葱落</title>
   <meta name="author" content="凉葱落" />
+  <meta name="baidu-site-verification" content="hnb7EawW5f" />
   <meta name="description" content="一个关于凉葱落对互联网技术理解的网站,一个程序员对自己所学的东西的总结或整理的网站."/>
   <meta name="keywords" content="凉葱落,互联网技术,HTML5,CSS3,Python,Linux,黑客,黑客攻击,黑客工具等" />
 
@@ -19,21 +20,23 @@
 <body>
   <div class="wrapper">
     <div class="header">
-      <p><img src="/images/logo.png"alt="凉葱落" /></p>
-      <p></p>
-      <h1><a href="/">凉葱落</a></h1>
-      <p>学无止境,静水流深.</p>
-      <p><a href="/about.html">关于我</a></p>
+        <ul class="navbar">
+          <li><a href="/">首页</a></li>
+          <li><a href="http://www.langoft.com" target="_blank">良葱</a></li>
+          <li><a href="http://www.llango.com" target="_blank">凉葱</a></li>
+          <li><a href="/about.html">关于</a></li>
+      </ul>
 
-      <p class="lianxi">
+      <!-- <p class="lianxi">
         <a href="mailto:rontomai@gmail.com">rontomai@gmail.com</a><br/>
         <a href="http://github.com/rontom/">github.com/rontom</a><br />
         <a href="http://twitter.com/rontomai/">twitter.com/rontomai</a><br />
-      </p>
+      </p> -->
     </div>
-    
+
+
     <div class="content">
-    <header class="post-header">
+<header class="post-header">
   <h1 class="post-title"><a href="/2014/06/26/python-argv.html">Python中sys.argv用法</a></h2>
   <p class="post-meta">
     <i class="fa fa-calendar"></i>
@@ -50,24 +53,24 @@
 
 <h4 id="section-1">举例说明</h4>
 
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="p">&gt;&gt;&gt;</span>import sys
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim">    <span class="p">&gt;&gt;&gt;</span>import sys
     <span class="p">&gt;&gt;&gt;</span>python ×××.<span class="k">py</span>  langoft.<span class="k">com</span> <span class="k">for</span> you <span class="k">to</span> choose.  #sys.argv[<span class="m">0</span>] 代表你运行的代码本身，即本例中<span class="s1">&#39;×××.py&#39;</span><span class="p">,</span>而sys.argv[<span class="m">1</span>]为第一个参数即<span class="s1">&#39;langoft.com&#39;</span><span class="p">,</span>sys.argv[<span class="m">2</span>]为<span class="s1">&#39;for&#39;</span>。
     <span class="p">&gt;&gt;&gt;</span>import os <span class="p">,</span>sys
     <span class="p">&gt;&gt;&gt;</span>os.system<span class="p">(</span>sys.argv[<span class="m">1</span>]<span class="p">)</span>
-    <span class="p">&gt;&gt;&gt;</span>python ×××.<span class="k">py</span> <span class="k">vim</span>  #os.system是用来执行命令行的。因此该程序会接受到第一个参数为<span class="s1">&#39;vim&#39;</span>，即执行<span class="k">vim</span><span class="p">,</span>这样你将打开<span class="k">vim</span>编辑界面了。</code></pre></div>
+    <span class="p">&gt;&gt;&gt;</span>python ×××.<span class="k">py</span> <span class="k">vim</span>  #os.system是用来执行命令行的。因此该程序会接受到第一个参数为<span class="s1">&#39;vim&#39;</span>，即执行<span class="k">vim</span><span class="p">,</span>这样你将打开<span class="k">vim</span>编辑界面了。</code></pre></figure>
 
 <h4 id="section-2">应用实例</h4>
 <pre>
 
-<div class="highlight"><pre><code class="language-vim" data-lang="vim">\#<span class="p">!</span><span class="sr">/usr/</span><span class="nb">bin</span>/env python
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim">\#<span class="p">!</span><span class="sr">/usr/</span><span class="nb">bin</span>/env python
 \# <span class="p">-</span>*<span class="p">-</span> coding: utf<span class="m">-8</span> <span class="p">-</span>*<span class="p">-</span>
 \# A revised example from A Byte of Python
 \# sys<span class="p">-</span>argv1.<span class="k">py</span>
 
 import sys
-<span class="nb">def</span> readfile<span class="p">(</span><span class="k">filename</span><span class="p">)</span>:         #从文件中读出文件内容
+<span class="nb">def</span> readfile<span class="p">(</span>filename<span class="p">)</span>:         #从文件中读出文件内容
         <span class="s1">&#39;&#39;&#39;Print a file to the standard output.&#39;&#39;&#39;</span>   
-        <span class="k">f</span><span class="p">=</span>open<span class="p">(</span><span class="k">filename</span><span class="p">)</span>	#可使用<span class="k">file</span><span class="p">()</span>代替
+        <span class="k">f</span><span class="p">=</span>open<span class="p">(</span>filename<span class="p">)</span>	#可使用<span class="k">file</span><span class="p">()</span>代替
         <span class="k">while</span> True:
                 line<span class="p">=</span><span class="k">f</span>.readline<span class="p">()</span> #readline<span class="p">()</span>文件内容单行读取，而read<span class="p">(),</span>readlines<span class="p">()</span>是整个文件内容读取
                 <span class="k">if</span> len<span class="p">(</span>line<span class="p">)==</span><span class="m">0</span>:
@@ -88,7 +91,7 @@ import sys
         sys.<span class="k">exit</span><span class="p">()</span>
 <span class="k">if</span> sys.argv[<span class="m">1</span>].startswith<span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>: 
         <span class="k">option</span><span class="p">=</span>sys.argv[<span class="m">1</span>][<span class="m">2</span>:]
-        <span class="k">if</span> <span class="k">option</span><span class="p">==</span><span class="s1">&#39;version&#39;</span>:   #当命令参数为<span class="p">--</span><span class="k">version</span>，显示版本号
+        <span class="k">if</span> <span class="k">option</span><span class="p">==</span><span class="s1">&#39;version&#39;</span>:   #当命令参数为<span class="p">--</span>version，显示版本号
                 print<span class="s1">&#39;Version 1.2&#39;</span>
         elif <span class="k">option</span><span class="p">==</span><span class="s1">&#39;help&#39;</span>:    #当命令参数为<span class="p">--</span>help时，显示相关帮助内容
                 print<span class="s1">&#39;&#39;</span>&#39;
@@ -96,20 +99,18 @@ import sys
 This program prints <span class="k">files</span> <span class="k">files</span> <span class="k">to</span> the standart output.
 Any <span class="k">number</span> of <span class="k">files</span> can be specified.
 Options <span class="nb">include</span>:
-<span class="p">--</span><span class="k">version</span>:Prints hte <span class="k">version</span> <span class="k">number</span>
+<span class="p">--</span>version:Prints hte version <span class="k">number</span>
 <span class="p">--</span>help   :Display the hellp<span class="s1">&#39;&#39;</span>&#39;
         <span class="k">else</span>:
                 print <span class="s1">&#39;Unknow option.&#39;</span>
         sys.<span class="k">exit</span><span class="p">()</span>
 <span class="k">else</span>:
-        <span class="k">for</span> <span class="k">filename</span> <span class="k">in</span> sys.argv[<span class="m">1</span>:]:   #当参数为文件名时，传入readfile，读出其内容。
-                readfile<span class="p">(</span><span class="k">filename</span><span class="p">)</span></code></pre></div>
+        <span class="k">for</span> filename <span class="k">in</span> sys.argv[<span class="m">1</span>:]:   #当参数为文件名时，传入readfile，读出其内容。
+                readfile<span class="p">(</span>filename<span class="p">)</span></code></pre></figure>
 
 </pre>
 
 </div>
-
-<hr/>
 
 <div class="pagination">
 
@@ -120,32 +121,56 @@ Options <span class="nb">include</span>:
 
 </div>
 
-<div class="ds-thread">
-</div>
-
-<script type="text/javascript">
-	var duoshuoQuery = {short_name:"hacklang"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';
-		ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-</script>
-<!-- 多说公共JS代码 end -->
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div>
+<!-- script type="text/javascript">
+(function(){
+var appid = 'cyt9AMlPG';
+var conf = 'prod_edab5ed29455a7b5c8c91ee53d3722f5';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); }
+else {
+    var loadJs=function(d,a){
+        var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+        var b=document.createElement("script");
+        b.setAttribute("type","text/javascript");
+        b.setAttribute("charset","UTF-8");
+        b.setAttribute("src",d);
+        if(typeof a==="function"){
+            if(window.attachEvent){
+                b.onreadystatechange=function(){
+                    var e=b.readyState;
+                    if(e==="loaded"||e==="complete"){
+                        b.onreadystatechange=null;a()
+                    }
+                }
+            }else{
+                b.onload=a
+            }
+        }
+        c.appendChild(b)};
+        loadJs("http://changyan.sohu.com/upload/changyan.js",function(){
+            window.changyan.api.config({appid:appid,conf:conf})
+        });
+    }
+})();
+</script !-->
 
 
 <div id="related">
- 	<h2>最新文章：</h2>
  	<hr/>
- 	<ol class="posts">
+    <h4>最近文章：</h4>
+ 	<ul class="posts">
 	
   		<li>
+    		<span class="datetime muted" data-time="2015-03-12 00:00:00 +0800">12 Mar 2015 </span>
+    		<a href="/2015/03/12/ie8-rgba.html">IE8下如何实现兼容rgba？</a>
+  		</li>
+  	
+  		<li>
     		<span class="datetime muted" data-time="2015-01-12 00:00:00 +0800">12 Jan 2015 </span>
-    		<a href="/2015/01/12/animate.html">animate的使用</a>
+    		<a href="/2015/01/12/animate.html">如何使用display:flex多栏多列进行布局</a>
   		</li>
   	
   		<li>
@@ -153,45 +178,18 @@ Options <span class="nb">include</span>:
     		<a href="/2015/01/10/cannonical-introduction.html">标签link的属性rel的值为cannonical介绍</a>
   		</li>
   	
-  		<li>
-    		<span class="datetime muted" data-time="2014-12-22 00:00:00 +0800">22 Dec 2014 </span>
-    		<a href="/2014/12/22/dns-prefetch-one.html">DNS Prefetch</a>
-  		</li>
-  	
-   </ol>
+    </ul>
 </div>
-    </div>
-    
+</div>
 
-    <!--div class="footer">   
+
+
+    <!--div class="footer">
       <div class="rss">
   	   <img src="/images/weixin.png" alt="scan me for you">
       </div>
     </div-->
-  
+
   </div>
-
-  <!-- ClickTale Bottom part -->
-  <!--div id="ClickTaleDiv" style="display: none;"></div-->
-  <!--script type="text/javascript">
-  if(document.location.protocol!='https:')
-    document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-  </script-->
-  <!-- ClickTale end of Bottom part -->
-
-  <!-- Google Analytics -->
-  <!--script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  var pageTracker = _gat._getTracker("UA-6016902-1");
-  pageTracker._trackPageview();
-  </script-->
-  <!-- Google Analytics end -->
-
 </body>
 </html>

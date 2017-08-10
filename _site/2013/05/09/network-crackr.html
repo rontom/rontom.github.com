@@ -37,28 +37,32 @@
 
     <div class="content">
 <header class="post-header">
-  <h1 class="post-title"><a href="/2015/01/12/animate.html">如何使用display:flex多栏多列进行布局</a></h2>
+  <h1 class="post-title"><a href="/2013/05/09/network-crackr.html">Python代码编写出现的错误</a></h2>
   <p class="post-meta">
     <i class="fa fa-calendar"></i>
-   写作时间：2015年01月12日
+   写作时间：2013年05月09日
   </p>
 </header>
 
 <div id="post">
 <hr />
 
-<h4 id="section">介绍</h4>
+<h4 id="pythonsyntaxerrornon-ascii-character-xe5">python默认编码错误SyntaxError:Non-ASCII character ‘\xe5’之解决方法</h4>
 
-<p>sys.argv变量是一个字符串（包含了命令行参数）列表，即使用命令行传递给你的程序的参数。也包括python脚本名本身。其中sys为python标准模块，直接import sys插入使用，这是sys.argv[]能够使用的条件。argv是argument vector的简写，即参数指针。sys.argv[0]代表代码本身文件路径。sys.argv[1]代表地一个参数，依此类推。</p>
+<p>在编写python时，当使用中文输出或注释时运行脚本，会提示错误信息：	
+SyntaxError:Non-SACII character ‘\xe5’ in file……</p>
+
+<p>解决方法：python的默认编码文件用的是ASCII码，你将文件保存为UTF-8，解决方法很简单，在文件开头加入
+#-<em>-coding:utf-8-</em>- 或者是#coding=utf-8</p>
 
 </div>
 
 <div class="pagination">
 
-	<a class="pagination-item newer" href="/2015/01/10/cannonical-introduction.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--标签link的属性rel的值为cannonical介绍--></a>
+	<a class="pagination-item newer" href="/2013/05/08/network-crackr.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--Python和Mercurial环境的搭建--></a>
 
 
-	<a class="pagination-item older" href="/2015/03/12/ie8-rgba.html"><!--IE8下如何实现兼容rgba？-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+	<a class="pagination-item older" href="/2013/05/10/network-crackr.html"><!--Python中sys.argv用法-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
 
 </div>
 

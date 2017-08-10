@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>凉葱落</title>
   <meta name="author" content="凉葱落" />
+  <meta name="baidu-site-verification" content="hnb7EawW5f" />
   <meta name="description" content="一个关于凉葱落对互联网技术理解的网站,一个程序员对自己所学的东西的总结或整理的网站."/>
   <meta name="keywords" content="凉葱落,互联网技术,HTML5,CSS3,Python,Linux,黑客,黑客攻击,黑客工具等" />
 
@@ -19,21 +20,23 @@
 <body>
   <div class="wrapper">
     <div class="header">
-      <p><img src="/images/logo.png"alt="凉葱落" /></p>
-      <p></p>
-      <h1><a href="/">凉葱落</a></h1>
-      <p>学无止境,静水流深.</p>
-      <p><a href="/about.html">关于我</a></p>
+        <ul class="navbar">
+          <li><a href="/">首页</a></li>
+          <li><a href="http://www.langoft.com" target="_blank">良葱</a></li>
+          <li><a href="http://www.llango.com" target="_blank">凉葱</a></li>
+          <li><a href="/about.html">关于</a></li>
+      </ul>
 
-      <p class="lianxi">
+      <!-- <p class="lianxi">
         <a href="mailto:rontomai@gmail.com">rontomai@gmail.com</a><br/>
         <a href="http://github.com/rontom/">github.com/rontom</a><br />
         <a href="http://twitter.com/rontomai/">twitter.com/rontomai</a><br />
-      </p>
+      </p> -->
     </div>
-    
+
+
     <div class="content">
-    <header class="post-header">
+<header class="post-header">
   <h1 class="post-title"><a href="/2013/02/10/git-use.html">git使用备忘录</a></h2>
   <p class="post-meta">
     <i class="fa fa-calendar"></i>
@@ -61,41 +64,39 @@ git 配置文件的解析顺序(优先级递减）： <br />
    git commit -m ‘‘代码提交信息注释” #提交实际改动到HEAD.</p>
 
 <h4 id="git-1">3. git推送改动</h4>
-<p>git push origin master  #将本定仓库HEAD中的改动文件通过该命令提交到远端仓库,其中master为你推送的任何分支.         </p>
+<p>git push origin master  #将本定仓库HEAD中的改动文件通过该命令提交到远端仓库,其中master为你推送的任何分支.</p>
 
 <h4 id="git--1">4 . git 的拷贝</h4>
 <p>git clone /path/to/repository #创建本地仓库的克隆版本. <br />
-   git clone username@host:/path/to/repository #克隆远端仓库.   </p>
+   git clone username@host:/path/to/repository #克隆远端仓库.</p>
 
 <h4 id="git--2">5 . git 的同步</h4>
 <ol>
   <li>拷贝最新到本地的master下，并新建一个beta分支: <br />
-  git fetch server:/git/source_code  local_path master:beta   </li>
+  git fetch server:/git/source_code  local_path master:beta</li>
   <li>比较master 与beta 的区别: <br />
-   git whatchanged master beta    </li>
+   git whatchanged master beta</li>
   <li>将本地的master内容与beta融合:    <br />
 选择1 <br />
  git merge beta   # 把beta 放入master， 有点不建议这样，因为容易改动master <br />
 选择2 <br />
  git checkout beta  <br />
- git merge master  # 把master放入beta    </li>
+ git merge master  # 把master放入beta</li>
   <li>消除冲突 （如果有的话）   <br />
- 用文本编辑器（vim） 编译，消除冲突     </li>
+ 用文本编辑器（vim） 编译，消除冲突</li>
 </ol>
 
 <h4 id="git--3">6 . git 的更新</h4>
 <p>git push server:/git/source_code   # 注意，如果server只有一个master，默认是不允许修改的. <br />
  建议是推送到server 的master下的一个分支，等管理员检查后在更新server 的master. <br />
- git push server:/git/source_code master:dev # 把最新上传的code 放在master下的dev分支.   </p>
+ git push server:/git/source_code master:dev # 把最新上传的code 放在master下的dev分支.</p>
 
 <h4 id="git--4">7 . git 的本地改动替换</h4>
 <p>git checkout –  &lt;filename&gt;   # 替换本地改动.  该命令使用HEAD中的最新内容替换你的工作目录中的文件,已增加到缓存区的改动及新文件不受影响.    <br />
 git fetch origin   # 从服务器上获取最新的版本. <br />
-git reset –hard origin/master #将本地主分支指向它.    </p>
+git reset –hard origin/master #将本地主分支指向它.</p>
 
 </div>
-
-<hr/>
 
 <div class="pagination">
 
@@ -106,32 +107,56 @@ git reset –hard origin/master #将本地主分支指向它.    </p>
 
 </div>
 
-<div class="ds-thread">
-</div>
-
-<script type="text/javascript">
-	var duoshuoQuery = {short_name:"hacklang"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';
-		ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-</script>
-<!-- 多说公共JS代码 end -->
+<!--PC和WAP自适应版-->
+<div id="SOHUCS" sid="请将此处替换为配置SourceID的语句" ></div>
+<!-- script type="text/javascript">
+(function(){
+var appid = 'cyt9AMlPG';
+var conf = 'prod_edab5ed29455a7b5c8c91ee53d3722f5';
+var width = window.innerWidth || document.documentElement.clientWidth;
+if (width < 960) {
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); }
+else {
+    var loadJs=function(d,a){
+        var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;
+        var b=document.createElement("script");
+        b.setAttribute("type","text/javascript");
+        b.setAttribute("charset","UTF-8");
+        b.setAttribute("src",d);
+        if(typeof a==="function"){
+            if(window.attachEvent){
+                b.onreadystatechange=function(){
+                    var e=b.readyState;
+                    if(e==="loaded"||e==="complete"){
+                        b.onreadystatechange=null;a()
+                    }
+                }
+            }else{
+                b.onload=a
+            }
+        }
+        c.appendChild(b)};
+        loadJs("http://changyan.sohu.com/upload/changyan.js",function(){
+            window.changyan.api.config({appid:appid,conf:conf})
+        });
+    }
+})();
+</script !-->
 
 
 <div id="related">
- 	<h2>最新文章：</h2>
  	<hr/>
- 	<ol class="posts">
+    <h4>最近文章：</h4>
+ 	<ul class="posts">
 	
   		<li>
+    		<span class="datetime muted" data-time="2015-03-12 00:00:00 +0800">12 Mar 2015 </span>
+    		<a href="/2015/03/12/ie8-rgba.html">IE8下如何实现兼容rgba？</a>
+  		</li>
+  	
+  		<li>
     		<span class="datetime muted" data-time="2015-01-12 00:00:00 +0800">12 Jan 2015 </span>
-    		<a href="/2015/01/12/animate.html">animate的使用</a>
+    		<a href="/2015/01/12/animate.html">如何使用display:flex多栏多列进行布局</a>
   		</li>
   	
   		<li>
@@ -139,45 +164,18 @@ git reset –hard origin/master #将本地主分支指向它.    </p>
     		<a href="/2015/01/10/cannonical-introduction.html">标签link的属性rel的值为cannonical介绍</a>
   		</li>
   	
-  		<li>
-    		<span class="datetime muted" data-time="2014-12-22 00:00:00 +0800">22 Dec 2014 </span>
-    		<a href="/2014/12/22/dns-prefetch-one.html">DNS Prefetch</a>
-  		</li>
-  	
-   </ol>
+    </ul>
 </div>
-    </div>
-    
+</div>
 
-    <!--div class="footer">   
+
+
+    <!--div class="footer">
       <div class="rss">
   	   <img src="/images/weixin.png" alt="scan me for you">
       </div>
     </div-->
-  
+
   </div>
-
-  <!-- ClickTale Bottom part -->
-  <!--div id="ClickTaleDiv" style="display: none;"></div-->
-  <!--script type="text/javascript">
-  if(document.location.protocol!='https:')
-    document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-  </script-->
-  <!-- ClickTale end of Bottom part -->
-
-  <!-- Google Analytics -->
-  <!--script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  var pageTracker = _gat._getTracker("UA-6016902-1");
-  pageTracker._trackPageview();
-  </script-->
-  <!-- Google Analytics end -->
-
 </body>
 </html>

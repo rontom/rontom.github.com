@@ -8,16 +8,15 @@
 }
 
 body {
-	padding:60px;
-	font:14px/1.5 "Microsoft Yahei",sans-serif,Arial;
+	font:16px/1.5 "Microsoft Yahei",sans-serif,Arial;
 	font-weight:300;
-	background-color: #f1f1f1;
-	color:#555;
+	background-color: #fff;
+	color:#686868;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	margin:0 0 20px;
-	color:#222;
+	color:#171717;
 }
 
 h1, h2, h3 {
@@ -28,14 +27,6 @@ h1 {
 	font-size:24px;
 }
 
-h2 {
-	color:#30accd;
-}
-
-h3, h4, h5, h6 {
-	color:#30accd;
-}
-
 p, ul, ol, table, pre, dl {
 	margin:0 0 20px;
 }
@@ -43,12 +34,13 @@ p, ul, ol, table, pre, dl {
 a {
 	font-weight:400;
 	text-decoration:none;
-	color:#30accd;
+	color:#343434;
 }
 
 a:hover{
 	text-decoration:none;
-	color:#3a6aa7;
+	color:#000;
+	transition: color 200ms;
 }
 
 a small {
@@ -68,14 +60,10 @@ blockquote {
 code, pre {
   	font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   	color:#333;
-  	font-size:12px;
+  	font-size:13px/1.5;
 }
 
 pre {
-  	padding:8px 15px;
-  	background-color: #f8f8f8;  
-  	border-radius:5px;
-  	border:1px solid #e5e5e5;
  	overflow-x: auto;
 }
 
@@ -121,39 +109,64 @@ hr {
 #home span{
 	text-align:center;
 	font-size:12px;
-  color:#999;
+  	color:#999;
 }
 .wrapper {
-	width:860px;
+	width:960px;
 	margin:auto;
 }
 
-.header {
+/*.header {
 	width:260px;
 	position:fixed;
 }
 .header img{
 	width:120px;
 	height:130px;
+}*/
+.header{
+	height: 36px;
+	margin-bottom: 15px;
+	border-bottom: 1px dashed #ccc;
+}
+.navbar{
+	margin-left:15px;
+	margin-right:15px;
+}
+.navbar li{
+	list-style: none;
+	float: left;
+	width: 60px;
 }
 .content{
-  width:600px;
+  width:960px;
   float:right;
   padding-bottom:50px;
+}
+.content img{
+	text-align: center;
+	width: 100%;
+	height: auto;
 }
 .content button{
   padding:10px 20px;
   font-size: 18px;
 }
-ol.posts,ol.posts li{
+
+ul.posts,ul.posts li{
 	margin:0;
 	padding:0;
 }
-ol.posts li{
+ul.posts{
+	margin-left:15px;
+	margin-right:10px;
+}
+ul.posts li{
 	margin-bottom:20px;
 	color:#999;
+	list-style: none;
 }
-ol.posts .datetime{
+ul.posts .datetime{
 	display:inline-block;
 	vertial-align:baseline;
 	zoom:1;
@@ -175,6 +188,11 @@ ol.posts .datetime{
 .footer .rss{
   text-align: center;
 }
+.description{
+	padding: 0px 10px 15px 15px;
+	font-size: 12px;
+	color: #999;
+}
 /*****************************************************************************/
 /*
 /* Posts
@@ -188,9 +206,11 @@ ol.posts .datetime{
   /* standard */
 
   #post pre {
-    border: 1px solid #ddd;
-    background-color: #eef;
-    padding: 0 .4em;
+  	background-color: #333;
+  	padding: 0 .4em;
+  	color: #f1f1f1;
+  	padding: 15px;
+
   }
 
   #post ul,
@@ -199,10 +219,14 @@ ol.posts .datetime{
   }
 
   #post code {
-    border: 1px solid #ddd;
-    background-color: #eef;
-    font-size: 85%;
-    padding: 0 .2em;
+	border: 1px solid #333;
+  	background-color: #333;
+  	font-size: 85%;
+  	padding: 0 .2em;
+  	color: #fff;
+  	padding: 2px 5px;
+  	margin-left: 3px;
+  	margin-right: 3px;
   }
 
     #post pre code {
@@ -228,6 +252,14 @@ ol.posts .datetime{
   #related h2 {
     margin-bottom: 1em;
     color:#999;
+  }
+  .post-title{
+	  font-size: 36px;
+  }
+  .post-meta{
+	  font-size: 12px;
+	  color:#999;
+	  margin-bottom: 10px;
   }
 
 /*****************************************************************************/
@@ -269,6 +301,7 @@ ol.posts .datetime{
 .pagination{
   color:#ccc;
   text-align:center;
+  height:38px;
 }
 .pagination-item{
   background:#fff;
@@ -287,8 +320,8 @@ a.pagination-item{
 }
 a.pagination-item:hover{
   color:white;
-  background:#30accd;
-  border:1px solid #30accd;
+  background: #343434;
+  border: 1px solid #343434;
 }
 .pagination-item:first-child{
   float:left;
@@ -307,25 +340,24 @@ a.pagination-item:hover{
     width:auto;
   }
   .header{
-    text-align:center;  
+    text-align:center;
   }
   .lianxi{
     display: none;
   }
   .content{
-    border-top: 1px solid #e9e9e9;
-    padding: 20px 0px;
+    padding: 20px 10px 20px 15px;
   }
 }
 @media print, screen and (max-width: 480px){
   body{
-    padding:20px 20px 20px 40px;
+    padding:5px;
   }
   .header{
-    text-align:center;  
+    text-align:center;
   }
   .pagination-item{
-    padding: 10px 10px; 
+    padding: 10px 10px;
   }
   #ds-reset .ds-avatar img{
     width: 24px !important;
@@ -338,4 +370,11 @@ a.pagination-item:hover{
     font-size:12pt;
     color:#334455;
   }
+}
+
+.title-name-w, .module-cmt-footer{
+	display: none !important;
+}
+.section-service-w .service-wrap-w a{
+	display: none !important;
 }

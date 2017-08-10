@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>凉葱落</title>
   <meta name="author" content="凉葱落" />
+  <meta name="baidu-site-verification" content="hnb7EawW5f" />
   <meta name="description" content="一个关于凉葱落对互联网技术理解的网站,一个程序员对自己所学的东西的总结或整理的网站."/>
   <meta name="keywords" content="凉葱落,互联网技术,HTML5,CSS3,Python,Linux,黑客,黑客攻击,黑客工具等" />
 
@@ -19,31 +20,42 @@
 <body>
   <div class="wrapper">
     <div class="header">
-      <p><img src="/images/logo.png"alt="凉葱落" /></p>
-      <p></p>
-      <h1><a href="/">凉葱落</a></h1>
-      <p>学无止境,静水流深.</p>
-      <p><a href="/about.html">关于我</a></p>
+        <ul class="navbar">
+          <li><a href="/">首页</a></li>
+          <li><a href="http://www.langoft.com" target="_blank">良葱</a></li>
+          <li><a href="http://www.llango.com" target="_blank">凉葱</a></li>
+          <li><a href="/about.html">关于</a></li>
+      </ul>
 
-      <p class="lianxi">
+      <!-- <p class="lianxi">
         <a href="mailto:rontomai@gmail.com">rontomai@gmail.com</a><br/>
         <a href="http://github.com/rontom/">github.com/rontom</a><br />
         <a href="http://twitter.com/rontomai/">twitter.com/rontomai</a><br />
-      </p>
+      </p> -->
     </div>
-    
-    <div class="content">
+
+
     <div id="home">
-  	<ol class="posts" reversed>
+  	<ul class="posts" reversed>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2015-03-12 00:00:00 +0800">12 Mar 2015 </span>
+    		<a href="/2015/03/12/ie8-rgba.html">IE8下如何实现兼容rgba？</a>
+  		</li>
   	
   		<li>
     		<span class="datetime muted" data-time="2015-01-12 00:00:00 +0800">12 Jan 2015 </span>
-    		<a href="/2015/01/12/animate.html">animate的使用</a>
+    		<a href="/2015/01/12/animate.html">如何使用display:flex多栏多列进行布局</a>
   		</li>
   	
   		<li>
     		<span class="datetime muted" data-time="2015-01-10 00:00:00 +0800">10 Jan 2015 </span>
     		<a href="/2015/01/10/cannonical-introduction.html">标签link的属性rel的值为cannonical介绍</a>
+  		</li>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2015-01-01 00:00:00 +0800">01 Jan 2015 </span>
+    		<a href="/2015/01/01/kali-grub-window.html"> window安装kali系统之后如何找回windows引导</a>
   		</li>
   	
   		<li>
@@ -88,27 +100,27 @@
   	
   		<li>
     		<span class="datetime muted" data-time="2013-05-11 00:00:00 +0800">11 May 2013 </span>
-    		<a href="/2013/05/11/network-crackr%20.html">在Python中列表、元组、集合、字典的比较</a>
+    		<a href="/2013/05/11/network-crackr.html">在Python中列表、元组、集合、字典的比较</a>
   		</li>
   	
   		<li>
     		<span class="datetime muted" data-time="2013-05-10 00:00:00 +0800">10 May 2013 </span>
-    		<a href="/2013/05/10/network-crackr%20.html">Python中sys.argv用法</a>
+    		<a href="/2013/05/10/network-crackr.html">Python中sys.argv用法</a>
   		</li>
   	
   		<li>
     		<span class="datetime muted" data-time="2013-05-09 00:00:00 +0800">09 May 2013 </span>
-    		<a href="/2013/05/09/network-crackr%20.html">Python代码编写出现的错误</a>
-  		</li>
-  	
-  		<li>
-    		<span class="datetime muted" data-time="2013-05-08 00:00:00 +0800">08 May 2013 </span>
-    		<a href="/2013/05/08/network-crackr%20.html">网络攻击技术的发展趋势</a>
+    		<a href="/2013/05/09/network-crackr.html">Python代码编写出现的错误</a>
   		</li>
   	
   		<li>
     		<span class="datetime muted" data-time="2013-05-08 00:00:00 +0800">08 May 2013 </span>
     		<a href="/2013/05/08/network-crackr.html">Python和Mercurial环境的搭建</a>
+  		</li>
+  	
+  		<li>
+    		<span class="datetime muted" data-time="2013-05-08 00:00:00 +0800">08 May 2013 </span>
+    		<a href="/2013/05/08/network-crackr.html">网络攻击技术的发展趋势</a>
   		</li>
   	
   		<li>
@@ -131,45 +143,21 @@
     		<a href="/2013/01/01/linux-del-favicon.html">如何删除linux任务栏中的快捷图标</a>
   		</li>
   	
-   	</ol>
+    </ul>
 	<br/>
 	<hr/>
 
-	<span>基于jekyll编写，托管在github页面上.所有内容基于知识共享许可协议进行.</span>
+	<div class="description">基于jekyll编写，托管在github页面上.所有内容基于知识共享许可协议进行.</div>
 </div>
 
-    </div>
-    
 
-    <!--div class="footer">   
+
+    <!--div class="footer">
       <div class="rss">
   	   <img src="/images/weixin.png" alt="scan me for you">
       </div>
     </div-->
-  
+
   </div>
-
-  <!-- ClickTale Bottom part -->
-  <!--div id="ClickTaleDiv" style="display: none;"></div-->
-  <!--script type="text/javascript">
-  if(document.location.protocol!='https:')
-    document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-  </script-->
-  <!-- ClickTale end of Bottom part -->
-
-  <!-- Google Analytics -->
-  <!--script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-  <script type="text/javascript">
-  var pageTracker = _gat._getTracker("UA-6016902-1");
-  pageTracker._trackPageview();
-  </script-->
-  <!-- Google Analytics end -->
-
 </body>
 </html>

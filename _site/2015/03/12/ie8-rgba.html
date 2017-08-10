@@ -37,28 +37,35 @@
 
     <div class="content">
 <header class="post-header">
-  <h1 class="post-title"><a href="/2015/01/12/animate.html">如何使用display:flex多栏多列进行布局</a></h2>
+  <h1 class="post-title"><a href="/2015/03/12/ie8-rgba.html">IE8下如何实现兼容rgba？</a></h2>
   <p class="post-meta">
     <i class="fa fa-calendar"></i>
-   写作时间：2015年01月12日
+   写作时间：2015年03月12日
   </p>
 </header>
 
 <div id="post">
 <hr />
 
-<h4 id="section">介绍</h4>
+<h4 id="section">背景</h4>
 
-<p>sys.argv变量是一个字符串（包含了命令行参数）列表，即使用命令行传递给你的程序的参数。也包括python脚本名本身。其中sys为python标准模块，直接import sys插入使用，这是sys.argv[]能够使用的条件。argv是argument vector的简写，即参数指针。sys.argv[0]代表代码本身文件路径。sys.argv[1]代表地一个参数，依此类推。</p>
+<p>常常在使用background背景透明，发现在IE8下并不兼容。rgba的含义，r代表red，g代表green，b代表blue，a代表透明度。红绿蓝是三原色，所有颜色都可以由这三种颜色拼合而成。比如rgba(0,0,0,.5)就是透明度为0.5的黑色。现代浏览器是支持rgba的，但是在IE8等古董级浏览器中是不支持rgba的，IE8只能勉强支持rgb()函数（即去掉了透明度，只能表示颜色）。</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">background</span><span class="p">:</span><span class="n">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> <span class="o">/*</span><span class="err">不支持</span><span class="n">rgba</span><span class="err">的浏览器</span><span class="o">*/</span>
+<span class="n">background</span><span class="p">:</span><span class="n">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">.</span><span class="mi">5</span><span class="p">);</span> <span class="o">/*</span><span class="err">支持</span><span class="n">rgba</span><span class="err">的浏览器</span><span class="o">*/</span>
+<span class="nb">filter</span><span class="p">:</span><span class="n">progid</span><span class="p">:</span><span class="n">DXImageTransform</span><span class="o">.</span><span class="n">Microsoft</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">startColorstr</span><span class="o">=</span><span class="c">#7f000000,endColorstr=#7f000000);/*IE8支持*/</span></code></pre></figure>
+
+<p>startColorstr,endColorstr,用来做渐变用的，此处两个颜色都设置成了相同的颜色。
+#7f000000，第一部分是#号后面的7f。是rgba透明度0.5的IEfilter值。从0.1到0.9每个数字对应一个IEfilter值。对应关系如下。</p>
 
 </div>
 
 <div class="pagination">
 
-	<a class="pagination-item newer" href="/2015/01/10/cannonical-introduction.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--标签link的属性rel的值为cannonical介绍--></a>
+	<a class="pagination-item newer" href="/2015/01/12/animate.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--如何使用display:flex多栏多列进行布局--></a>
 
 
-	<a class="pagination-item older" href="/2015/03/12/ie8-rgba.html"><!--IE8下如何实现兼容rgba？-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+	<span class="pagination-item older">下一篇&nbsp;<i class="fa fa-chain-broken"></i></span>
 
 </div>
 

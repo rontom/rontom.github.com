@@ -37,28 +37,57 @@
 
     <div class="content">
 <header class="post-header">
-  <h1 class="post-title"><a href="/2015/01/12/animate.html">如何使用display:flex多栏多列进行布局</a></h2>
+  <h1 class="post-title"><a href="/2015/01/01/kali-grub-window.html"> window安装kali系统之后如何找回windows引导</a></h2>
   <p class="post-meta">
     <i class="fa fa-calendar"></i>
-   写作时间：2015年01月12日
+   写作时间：2015年01月01日
   </p>
 </header>
 
 <div id="post">
 <hr />
 
-<h4 id="section">介绍</h4>
+<h4 id="section">背景</h4>
+<p>当我们window安装kali系统之后发现window引导找不到，虽然我们仍可以通过window启动盘来找回，但怎是觉得有点不爽。其实有一种不错的方法可以试试：</p>
 
-<p>sys.argv变量是一个字符串（包含了命令行参数）列表，即使用命令行传递给你的程序的参数。也包括python脚本名本身。其中sys为python标准模块，直接import sys插入使用，这是sys.argv[]能够使用的条件。argv是argument vector的简写，即参数指针。sys.argv[0]代表代码本身文件路径。sys.argv[1]代表地一个参数，依此类推。</p>
+<h4 id="section-1">操作</h4>
+
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim">	<span class="p">&gt;&gt;&gt;</span>gedit <span class="sr">/boot/</span>grub/grub.cfg</code></pre></figure>
+
+<p>打开grub.cfg文件后找到### BEGIN /etc/grub.d/40_custom ###这里.在根据我下面的注释来修改引导项</p>
+
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim">                          
+    menuentry <span class="s2">&quot;windows8-by hacklang.me&quot;</span> {                                    
+    insmod part_msdos
+    insmod ntfs
+    <span class="k">set</span> root<span class="p">=</span><span class="s1">&#39;(hd0,msdos1)&#39;</span>                             <span class="sr">//</span>这个地方改为你windows所在的分区注意windows7以上版本要改为那个<span class="m">200</span>MB的分区
+    search <span class="p">--</span>no<span class="p">-</span>floppy <span class="p">--</span><span class="nb">fs</span><span class="p">-</span>uuid <span class="p">--</span><span class="k">set</span><span class="p">=</span>root <span class="m">3802386</span>C<span class="m">0238316</span>C    <span class="sr">//</span>这个地方有些人没有<span class="k">set</span><span class="p">=</span>root所以要自己修改<span class="p">,</span>后面跟着的是UUID
+    chainloader <span class="p">+</span><span class="m">1</span>}</code></pre></figure>
+
+<p>查看分区UUID可以在终端命令输入 sudo blkid</p>
+
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim">                    
+    root@neo:<span class="p">~</span># sudo blkid
+    <span class="sr">/dev/</span>sda1: UUID<span class="p">=</span><span class="s2">&quot;3802386C0238316C&quot;</span> TYPE<span class="p">=</span><span class="s2">&quot;ntfs&quot;</span> 
+    <span class="sr">/dev/</span>sda2: UUID<span class="p">=</span><span class="s2">&quot;02C2CDABC2CDA2F1&quot;</span> TYPE<span class="p">=</span><span class="s2">&quot;ntfs&quot;</span> 
+    <span class="sr">/dev/</span>sda5: UUID<span class="p">=</span><span class="s2">&quot;748EA05D8EA01A1E&quot;</span> TYPE<span class="p">=</span><span class="s2">&quot;ntfs&quot;</span> 
+    <span class="sr">/dev/</span>sda6: UUID<span class="p">=</span><span class="s2">&quot;F21EAF051EAEC249&quot;</span> TYPE<span class="p">=</span><span class="s2">&quot;ntfs&quot;</span> 
+    <span class="sr">/dev/</span>sda7: UUID<span class="p">=</span><span class="s2">&quot;8454092554091B94&quot;</span> TYPE<span class="p">=</span><span class="s2">&quot;ntfs&quot;</span> 
+    <span class="sr">/dev/</span>sda9: UUID<span class="p">=</span><span class="s2">&quot;ae39760a-4f3d-492a-95fa-586060fcf3e5&quot;</span> TYPE<span class="p">=</span><span class="s2">&quot;swap&quot;</span> 
+    <span class="sr">/dev/</span>sda8: UUID<span class="p">=</span><span class="s2">&quot;e0aeb499-e7b7-4efe-9b6c-8e8883790e96&quot;</span> TYPE<span class="p">=</span><span class="s2">&quot;ext4&quot;</span> 
+    root@neo:<span class="p">~</span># </code></pre></figure>
+
+<p>然后在你的set=root代码后写上你set root=’(hd0,msdos1)’ 里面所写分区的UUID并保存在重启.
+grub启动界面选windows项,是不是找回你的window项。</p>
 
 </div>
 
 <div class="pagination">
 
-	<a class="pagination-item newer" href="/2015/01/10/cannonical-introduction.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--标签link的属性rel的值为cannonical介绍--></a>
+	<a class="pagination-item newer" href="/2014/12/22/dns-prefetch-one.html"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;上一篇<!--DNS Prefetch--></a>
 
 
-	<a class="pagination-item older" href="/2015/03/12/ie8-rgba.html"><!--IE8下如何实现兼容rgba？-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
+	<a class="pagination-item older" href="/2015/01/10/cannonical-introduction.html"><!--标签link的属性rel的值为cannonical介绍-->下一篇&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></a>
 
 </div>
 
