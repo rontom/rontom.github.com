@@ -248,6 +248,10 @@ ul.posts .datetime{
 #related {
   margin-top: 2em;
 }
+#related ul{
+	margin-left: 0;
+	margin-right: 0;
+}
 
   #related h2 {
     margin-bottom: 1em;
